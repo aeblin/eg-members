@@ -41,16 +41,14 @@ define( 'WP_DEBUG', false );
 // =========================
 define( 'AUTOMATIC_UPDATER_DISABLED', false );
 
-// =========================
-// Disable automatic updates
-// =========================
-define( 'AUTOMATIC_UPDATER_DISABLED', false );
-
 // =======================
 // Load Wordpress Settings
 // =======================
 $table_prefix = 'wp_';
 
+// ===================
+// Bootstrap WordPress
+// ===================
 if ( ! defined ( 'ABSPATH' ) ) {
 	define ( 'ABSPATH', dirname( __FILE__ ) . '/wp/' );
 }

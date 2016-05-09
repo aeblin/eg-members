@@ -1,0 +1,22 @@
+# Rewrite rule for post renaming
+RewriteRule ^([0-9]+)/([0-9]+)/(.*).html?$ /blog/$3/ [R=301,NC,L]
+# Rewrite rule for tags/categories
+RewriteRule ^tag/(.*)$ /blog/tag/$1 [R=301,NC,L]
+RewriteRule ^category/(.*)$ /blog/category/$1 [R=301,NC,L]
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
+
+AuthType Basic
+AuthName "Restricted Area"
+AuthUserFile /var/www/html/members.eblingroup.com/public/.htpasswd
+require valid-user
