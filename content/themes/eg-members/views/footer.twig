@@ -1,0 +1,95 @@
+<footer class="footer-primary" id="footer">
+  <div class="main-wrapper">
+    <div class="container-fluid">
+      <div class="footerContent">
+        {# 
+        <div class="row">
+
+          <div class="col-xs-24 col-sm-8 col-md-8 col-lg-5 footerContent--menu">   
+            <h3 class="footerContent--header">Connect</h3>
+            <hr>
+            <div class="row footer-social">
+              <div class="col-xs-3">
+                <a href="https://twitter.com/ScottEblin" target="_blank" class="footer-link">
+                  <i class="fa fa-twitter"></i>
+                </a>
+              </div>
+              <div class="col-xs-3">
+                <a href="https://facebook.com/EblinGroup" target="_blank" class="footer-link">
+                  <i class="fa fa-facebook"></i>
+                </a>
+              </div>
+              <div class="col-xs-3">
+                <a href="https://www.youtube.com/ScottEblin" target="_blank" class="footer-link">
+                  <i class="fa fa-youtube-play"></i>
+                </a>
+              </div>
+              <div class="col-xs-3">
+                <a href="https://vimeo.com/EblinGroup" target="_blank" class="footer-link">
+                  <i class="fa fa-vimeo"></i>
+                </a>
+              </div>
+              <div class="col-xs-3">
+                <a href="http://linkedin.com/company/TheEblinGroup" target="_blank" class="footer-link">
+                  <i class="fa fa-linkedin"></i>
+                </a>
+              </div>
+              <div class="col-xs-3">
+                <a href="mailto:contact@eblingroup.com" target="_blank" class="footer-link">
+                  <i class="fa fa-envelope"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-24 col-sm-8 col-md-8 col-lg-5 footerContent--menu">
+            <h3 class="footerContent--header">Downloads</h3>
+            <hr>
+            <ul class="list-plain">
+              {% for item in options.downloads %}
+                <li class="footerContent--link"><a href="{{item.download_url}}" target="_blank">{{item.download_title}}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+
+          <div class="col-xs-24 col-sm-8 col-md-8 col-lg-5 footerContent--menu">   
+            <h3 class="footerContent--header">Sitemap</h3>
+            <hr>
+            <ul class="list-plain">
+              {% for item in footermenu.items %}
+                <li id="menu-item-{{item.ID}}" class="footerContent--topLink menu-item-type-{{item.type}} menu-item-object-{{item.object}} menu-item-{{item.ID}}">
+                  <a href="{{item.link}}">{{item.title}}</a>
+                
+                  {% if item.get_children %}
+                    <ul class="footerContent--submenu">
+                      {% for child in item.get_children %}
+                        <li class="footerContent--link nav-drop-item menu-{{ child.title|replace(' ', '-')|lower }}"><a href="{{child.get_link}}">{{child.title}}</a></li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                    
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+
+          <div class="col-xs-24 col-sm-24 col-md-24 col-lg-9 footerContent--menu">
+            <h3 class="footerContent--header">Let's Work Together</h3>
+            <hr>
+            <div class="row">
+              {{ displaygform(2) }}
+            </div>
+          </div>
+        </div>
+        #}
+        <div class="row">
+           <div class="col-xs-24 col-sm-6 col-md-5 col-lg-5 footerContent--copyright">
+              © {{"now"|date("Y")}} EBLIN GROUP
+           <div> 
+        </div>
+      </div>      
+    </div>
+  </div>
+</footer>
+
+<div class="mobileNav--cloak"></div>

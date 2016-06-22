@@ -1,0 +1,74 @@
+// Color Variables //-------
+$color-primary: rgb(0,101,164);
+$color-primary--hover: lighten($color-primary, 10%);
+$color-primary--active: lighten($color-primary, 15%);
+$color-secondary: rgb(88,176,226);
+$color-background-light: rgb(240,245,255);
+$color-white: rgb(255,255,255);
+
+$color-gray-light: rgb(250,250,250);
+$color-gray-lightish: rgb(153,153,153);
+$color-gray-lightish--hover: darken($color-gray-lightish, 10%);
+$color-gray-lightish--active: darken($color-gray-lightish, 15%);
+$color-gray-default: rgb(92, 109, 122);
+
+$color-dark-navy: rgb(0, 42, 72);
+$color-superdark-navy: rgb(0,28,45);
+
+$color-accent-blue: rgb(0, 132, 221);
+
+$color-input-bluefaded: rgba(0,132,221,.35);
+$color-input-blue: rgba(0,132,221,.5);
+$color-input-blueFocus: rgba(0,132,221,.7);
+
+$color-text: rgb(60,60,60);
+$color-text-light: $color-gray-lightish;
+
+
+
+$boxShadow-dark-default: .35;
+$boxShadow-dark-half: ($boxShadow-dark-default/2);
+
+$page--topMargin: 8em;
+
+$border-radius--base: 4px;
+
+// Typographic Variables //-------
+$fontFamily--tungsten: "Tungsten A", "Tungsten B", sans-serif;
+$fontFamily--gotham: "Gotham SSm A", "Gotham SSm B", "Avenir-Book", sans-serif;
+$fontFamily--gothamNar: "Gotham Narrow SSm A", "Gotham Narrow SSm B", sans-serif;
+$fontFamily--surveyor: 'Surveyor SSm A', 'Surveyor SSm B', serif;
+$fontFamily--fallback: "Georgia", "Times New Roman", serif;
+
+$fontWeight--200: 200;
+$fontWeight--300: 300;
+$fontWeight--400: 400;
+$fontWeight--500: 500;
+$fontWeight--600: 600;
+$fontWeight--700: 700;
+
+$fontLineHeight--compact: 1;
+$fontLineHeight--default: 1.4;
+$fontLineHeight--medium: 1.55;
+$fontLineHeight--spacious: 1.75;
+
+$fontLetterSpacing--condensed: -0.02em;
+
+$fontSize--xsmall: .75em;
+$fontSize--small: .85em;
+$fontSize--default: 1em;
+$fontSize--smMedium: 1.35em;
+$fontSize--medium: 2.35em;
+$fontSize--large: 2.75em;
+$fontSize--xlarge: 3.75em;
+$fontSize--xxlarge: 5em;
+$fontSize--xxxlarge: 6.5em;
+
+$fontSize--xsmall--mobile: .85em;
+$fontSize--default--mobile: 1em;
+$fontSize--small--mobile: 1.25em;
+$fontSize--medium--mobile: 1.5em;
+$fontSize--large--mobile: 2em;
+$fontSize--xlarge--mobile: 2.5em;
+$fontSize--xxlarge--mobile: 3em;
+$fontSize--xxxlarge--mobile: 4em;

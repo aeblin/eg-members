@@ -1,0 +1,100 @@
+.box {
+  background-color: $color-dark-navy;
+  color: rgb(255,255,255);
+}
+
+.box-inverse {
+  background-color: rgb(255,255,255);
+  color: $color-dark-navy;
+}
+
+.box-hover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+}
+.box-hover:hover {
+  opacity: 1;
+}
+
+.box-full {
+  height: 70vh;
+  min-height: 480px;
+}
+
+.box-half {
+  height: 35vh;
+  min-height: 240px;
+  border-right: 1px solid $color-accent-blue;
+  border-bottom: 1px solid $color-accent-blue;
+  &:last-child {
+    border-right: none;
+  }
+}
+
+.box-det {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+  left: 10px;
+  padding: 15px;
+  background: $color-dark-navy;
+  color: rgba(255,255,255,.9);
+  text-align: center;
+}
+.box-detInverse {
+  @extend .box-det;
+  top: 20px;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(255,255,255,.95);
+  color: $color-dark-navy;
+}
+.box-title {
+  @include tungsten-n3;
+  font-size: $fontSize--medium;
+  line-height: $fontLineHeight--compact;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.box-copy {
+  position: relative;
+}
+.box-desc {
+  @include gotham-n2;
+  font-size: 1.2em;
+  letter-spacing: -0.05em;
+  text-align: center;
+  display: block;
+}
+.box-learnMore {
+  position: absolute;
+  width: 100%;
+  bottom: 10%;
+  left: 50%;
+  margin-left: -50%;
+}
+
+@media screen and (max-width: 1480px){
+  .box-title {
+    font-size: 1.7em;
+  }
+  .box-desc {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: $screen-md-min){
+  .box-desc {
+    font-size: 1.2em;
+  }
+}

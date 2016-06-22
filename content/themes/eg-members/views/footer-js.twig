@@ -1,0 +1,41 @@
+<!-- Adroll Include -->
+<script type="text/javascript">
+  adroll_adv_id = "VNTJB3WJFJHB3AZQIIQ7AJ";
+  adroll_pix_id = "UEWEMUHI5FAQFENY34J2GW";
+  (function () {
+  var oldonload = window.onload;
+  window.onload = function(){
+     __adroll_loaded=true;
+     var scr = document.createElement("script");
+     var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+     scr.setAttribute('async', 'true');
+     scr.type = "text/javascript";
+     scr.src = host + "/j/roundtrip.js";
+     ((document.getElementsByTagName('head') || [null])[0] ||
+      document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+     if(oldonload){oldonload()}};
+  }());
+</script>
+
+<!-- Mailchimp Include 
+<script type='text/javascript' src='https://s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+<script src="{{ site.theme.link }}/js/vendor/mc-custom.js"></script>
+<script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='MMERGE3';ftypes[3]='text';fnames[4]='MMERGE4';ftypes[4]='text';fnames[5]='MMERGE5';ftypes[5]='text';}(jQuery));var $mcj = jQuery.noConflict(true);
+</script>
+-->
+
+{% if post.post_type == 'products' %}
+  <!-- Gumroad Overlay -->
+  <script type="text/javascript" src="https://gumroad.com/js/gumroad.js"> </script>
+{% endif %}
+
+<!-- You found the scripts, good job. -->
+<script src="{{ site.theme.link }}/bower_components/scroll-up-bar/dist/scroll-up-bar.js"></script>
+<script src="{{ site.theme.link }}/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
+<script src="{{ site.theme.link }}/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
+<script src="{{ site.theme.link }}/bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
+<script src="{{ site.theme.link }}/bower_components/jquery-smooth-scroll/jquery.smooth-scroll.min.js"></script>
+<script src="{{ site.theme.link }}/bower_components/fancybox/source/jquery.fancybox.js"></script>
+
+<script src="{{ site.theme.link }}/js/vendor/ddslick.min.js"></script>
+<script src="{{ site.theme.link }}/js/site.js"></script>

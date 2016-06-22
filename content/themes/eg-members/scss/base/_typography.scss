@@ -1,0 +1,310 @@
+// Font Scale // ------
+html {
+  font-size: 14px;
+  color: $color-dark-navy;
+}
+@media (max-width: $screen-md-max) {
+  html { font-size: 13px; }
+}
+@media (max-width: $screen-sm-max) {
+  html { font-size: 12px; }
+}
+
+body {
+  line-height: 1;
+}
+
+// Font Mixins // ------
+@mixin tungsten-n2 {
+  font-family: $fontFamily--tungsten;
+  font-style: normal;
+  font-weight: $fontWeight--200;
+}
+@mixin tungsten-n3 {
+  font-family: $fontFamily--tungsten;
+  font-style: normal;
+  font-weight: $fontWeight--300;
+}
+@mixin tungsten-n4 {
+  font-family: $fontFamily--tungsten;
+  font-style: normal;
+  font-weight: $fontWeight--400;
+}
+@mixin tungsten-n5 {
+  font-family: $fontFamily--tungsten;
+  font-style: normal;
+  font-weight: $fontWeight--500;
+}
+@mixin tungsten-n6 {
+  font-family: $fontFamily--tungsten;
+  font-style: normal;
+  font-weight: $fontWeight--600;
+}
+
+@mixin gotham-n2 {
+  font-family: $fontFamily--gotham;
+  font-style: normal;
+  font-weight: $fontWeight--200;
+}
+@mixin gotham-n3 {
+  font-family: $fontFamily--gotham;
+  font-style: normal;
+  font-weight: $fontWeight--300;
+}
+@mixin gotham-n4 {
+  font-family: $fontFamily--gotham;
+  font-style: normal;
+  font-weight: $fontWeight--400;
+}
+@mixin gotham-i4 {
+  font-family: $fontFamily--gotham;
+  font-style: italic;
+  font-weight: $fontWeight--400;
+}
+@mixin gotham-n7 {
+  font-family: $fontFamily--gotham;
+  font-style: normal;
+  font-weight: $fontWeight--700;
+}
+@mixin gotham-i7 {
+  font-family: $fontFamily--gotham;
+  font-style: italic;
+  font-weight: $fontWeight--700;
+}
+
+@mixin surveyor-n3 {
+  font-family: $fontFamily--surveyor;
+  font-style: normal;
+  font-weight: $fontWeight--300;
+}
+@mixin surveyor-n5 {
+  font-family: $fontFamily--surveyor;
+  font-style: normal;
+  font-weight: $fontWeight--500;
+}
+
+@mixin mercury-n3 {
+  font-family: $fontFamily--mercury;
+  font-style: normal;
+  font-weight: $fontWeight--300;
+}
+@mixin mercury-i3 {
+  font-family: $fontFamily--mercury;
+  font-style: italic;
+  font-weight: $fontWeight--300;
+}
+@mixin mercury-n4 {
+  font-family: $fontFamily--mercury;
+  font-style: normal;
+  font-weight: $fontWeight--400;
+}
+@mixin mercury-i4 {
+  font-family: $fontFamily--mercury;
+  font-style: italic;
+  font-weight: $fontWeight--400;
+}
+@mixin mercury-n5 {
+  font-family: $fontFamily--mercury;
+  font-style: normal;
+  font-weight: $fontWeight--500;
+}
+@mixin mercury-i5 {
+  font-family: $fontFamily--mercury;
+  font-style: italic;
+  font-weight: $fontWeight--500;
+}
+@mixin mercury-n7 {
+  font-family: $fontFamily--mercury;
+  font-style: normal;
+  font-weight: $fontWeight--700;
+}
+@mixin mercury-i7 {
+  font-family: $fontFamily--mercury;
+  font-style: italic;
+  font-weight: $fontWeight--700;
+}
+
+.header-xsmall {
+  color: #999;
+  font-size: $fontSize--xsmall;
+  font-weight: 400;
+  margin-bottom: 1em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.header-small {
+  font-size: $fontSize--small;
+  line-height: $fontLineHeight--spacious;
+  margin-bottom: .5em;
+}
+.header-normal {
+  font-weight: $fontWeight--500;
+  line-height: $fontLineHeight--spacious;
+  margin-bottom: .5em;
+}
+.header-medium {
+  font-size: $fontSize--medium;
+  line-height: $fontLineHeight--spacious;
+  margin-bottom: .5em;
+}
+.header-large {
+  font-size: $fontSize--large;
+  line-height: $fontLineHeight--compact;
+  margin-bottom: .5em;
+}
+.header-xlarge {
+  font-size: $fontSize--xlarge;
+  line-height: $fontLineHeight--compact;
+  margin-bottom: .25em;
+}
+.header-xxlarge {
+  font-size: $fontSize--xxlarge;
+  line-height: $fontLineHeight--compact;
+  margin-bottom: .25em;
+}
+
+@media screen and (max-width: $screen-sm-min) {
+  .header-xsmall {
+    font-size: $fontSize--xsmall--mobile;
+  }
+  .header-small {
+    font-size: $fontSize--small--mobile;
+  }
+  .header-medium {
+    font-size: $fontSize--medium--mobile;
+  }
+  .header-large {
+    font-size: $fontSize--large--mobile;
+  }
+  .header-xlarge {
+    font-size: $fontSize--xlarge--mobile;
+  }
+  .header-xxlarge {
+    font-size: $fontSize--xxlarge--mobile;
+  }
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+a.link{
+  @include transition(color .25s);
+  color: $color-dark-navy;
+  &:hover {
+    color: $color-accent-blue;
+  }
+}
+
+p {
+  line-height: $fontLineHeight--default;
+}
+
+.text-content {
+  @include gotham-n3;
+  font-size: 1.25em;
+  line-height: $fontLineHeight--default;
+  margin-bottom: 1.2em;
+}
+
+.text-content-large {
+  @include gotham-n3;
+  font-size: $fontSize--smMedium;
+  margin-bottom: 1.35em;
+}
+
+// Add magic links to any text-content
+.text-content, .text-content-large, .noimgOverview {
+  a {
+    text-decoration: none;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.6) 50%);
+    background-repeat: repeat-x;
+    background-size: 2px 2px;
+    background-position: 0 18px;
+  }
+  a:hover {
+    text-decoration: none;
+    color: $color-dark-navy;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,42,72,0.6) 50%);
+    background-repeat: repeat-x;
+    background-size: 2px 2px;
+    background-position: 0 18px;
+  }
+}
+@media not all, only screen and (min-resolution: 2dppx), only screen and (-webkit-min-device-pixel-ratio: 2) {
+  // Make sure this looks right on retina
+  .text-content, .text-content-large, .noimgOverview {
+    a {
+      text-decoration: none;
+      background: linear-gradient(to bottom, rgba(0,0,0,0) 75%, rgba(0,0,0,0.8) 75%);
+      background-repeat: repeat-x;
+      background-size: 2px 2px;
+      background-position: 0 18px;
+    }
+    a:hover {
+      text-decoration: none;
+      color: $color-dark-navy;
+      background: linear-gradient(to bottom, rgba(0,0,0,0) 75%, rgba(0,42,72,0.8) 75%);
+      background-repeat: repeat-x;
+      background-size: 2px 2px;
+      background-position: 0 18px;
+    }
+  }
+}
+
+// Keeping Modifiers Consistent //----
+strong, b, .strong, .text-bold {
+  font-weight: $fontWeight--500;
+}
+em, i, .em {
+  font-style: italic;
+}
+// h elements //----
+h1,h2,h3,h4,h5{
+  -webkit-font-smoothing: antialiased;
+}
+h3 {
+  font-size: $fontSize--medium;
+  letter-spacing: $fontLetterSpacing--condensed;
+}
+
+h4 {
+  font-size: $fontSize--smMedium;
+  font-weight: 600;
+  line-height: $fontLineHeight--default;
+  letter-spacing: $fontLetterSpacing--condensed;
+  margin-bottom: 15px;
+}
+
+// Specific Classes //----
+.sectionHeader {
+  @include tungsten-n3;
+  font-size: 4em; //TODO AE: Come back to this.
+  letter-spacing: $fontLetterSpacing--condensed;
+  text-transform: uppercase;
+  color: $color-dark-navy;
+  margin-bottom: 15px;
+}
+
+.ul-bulleted {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 1em;
+  text-indent: -.85em;
+}
+.ul-bulleted li {
+  margin-bottom: 1em;
+}
+.ul-bulleted li:before {
+  content: "\02022 \0020";
+}
+// Icons //----
+.icon {
+  font-size: $fontSize--large;
+}

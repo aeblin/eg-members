@@ -1,0 +1,282 @@
+.u-clearfix {
+  @include clearfix
+}
+
+// Clears //----
+@media screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  .u-clear-after--lg-3>*:nth-child(2n+1) {
+    clear: left;
+  }
+}
+@media screen and (min-width: $screen-lg-min) {
+  .u-clear-after--lg-3>*:nth-child(3n+1) {
+    clear: left;
+  }
+}
+
+// Margins //----
+.u-clearBootstrap {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.u-noMargin {
+  margin: 0!important;
+}
+
+.u-marginTop20 {
+  margin-top: 20px;
+}
+
+.u-marginTop2em {
+  margin-top: 2em;
+}
+
+.u-marginTop4em {
+  margin-top: 4em;
+}
+
+.u-marginTop-2em {
+  margin-top: -2em;
+}
+
+.u-marginBottom-4em {
+  margin-bottom: -4em;
+}
+
+.u-marginBottom2em {
+  margin-bottom: 2em;
+}
+
+.u-marginBottom2Halfem {
+  margin-bottom: 2.5em;
+}
+// Padding //----
+.u-noPaddingLeft {
+  padding-left: 0px;
+  @media screen and (max-width: $screen-sm-max){
+    padding-left: 15px;
+  }
+}
+
+.u-noPaddingRight {
+  padding-right: 0px;
+  @media screen and (max-width: $screen-sm-max){
+    padding-right: 15px;
+  }
+}
+
+.u-gpuAccelerate {
+  @include transform(translate3d(0,0,0));
+}
+
+.u-positionStatic {
+  position: static;
+}
+
+.u-positionRelative {
+  position: relative;
+}
+
+.u-verticalAlign {
+  @include vertical-align;
+}
+
+.u-floatLeft {
+  float: left;
+}
+.u-floatRight {
+  float: right;
+}
+
+li.break:last-child {
+  border-bottom: 0;
+  margin-bottom: 0;
+}
+// Text-Related // -----------
+.u-textShadow {
+  @include text-shadow(1px 1px 1px rgba(0,0,0,.05));
+}
+
+.u-textShadowLight {
+  @include text-shadow(1px 1px 1px rgba(255,255,255,.05));
+}
+
+.u-textLeft {
+  text-align: left;
+}
+.u-textRight {
+  text-align: right;
+}
+.u-textCenter {
+  text-align: center;
+}
+@media screen and (max-width: $screen-sm-max){
+  .u-textLeft, .u-textRight, .u-textCenter{
+    text-align: center;
+  }
+}
+
+.u-textMdCenter {
+  @media (min-width: $screen-md-min) {
+    text-align: center;
+  }
+}
+
+.u-blockLinkHack {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
+
+// Background Related // ----------
+.u-bgFilter {
+  &:before {
+    position: absolute;
+    content:" ";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-color: rgba(20,35,40,0.15);
+  }
+}
+.u-bgFilterMid {
+  @extend .u-bgFilter;
+  &:before {
+    background-color: rgba(20,35,40,0.50);
+  }
+}
+.u-bgFilterMidDark {
+  @extend .u-bgFilter;
+  &:before {
+    background-color: rgba(0,40,70,0.70);
+  }
+}
+.u-bgFilterDark {
+  @extend .u-bgFilter;
+  &:before {
+    background-color: rgba(0,40,70,0.9);
+  }
+}
+
+.u-bgFilterBlue {
+  @extend .u-bgFilter;
+  &:before {
+    background-color: rgba(39,97,142,0.65);
+  }
+}
+.u-bgFilterBlueDark {
+  @extend .u-bgFilter;
+  &:before {
+    background-color: rgba(39,97,142,0.75);
+  }
+}
+.u-bgFilterBlueDark--sm {
+  @include transition(all, .25s);
+  @media screen and (max-width: $screen-sm-max){
+    &:before {
+      position: absolute;
+      content:" ";
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      background-color: rgba(39,97,142,0.75);
+    }
+  }
+}
+
+
+.u-backgroundCover {
+  background: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.u-backgroundContain {
+  background: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+.u-rightContain {
+  background-position: right;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+// Flexbox Aligner Utility
+.u-aligner {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: auto;
+}
+
+.u-alignerMd {
+  @media screen and (min-width: $screen-md-min) {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: auto;
+  }
+}
+
+.u-alignerItemFixed {
+  -webkit-box-flex: 0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  max-width: 50%;
+}
+
+.u-alignerItem {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.u-hidden{
+  display: none;
+}
+
+/*
+  Z-INDEX
+  While necessary, z-index rules should be used with careful thought
+  and planning to avoid unnecessary complications down the line. To help prevent
+  constant tinkering random z-index rules ranging from 1-999999, all z-index'ing
+  should be set using the below .z-index--1 through .z-index--10.
+*/
+
+@for $i from 1 through 10 {
+  .z-index--#{$i} {
+    position: relative;
+    z-index: #{$i};
+  }
+}

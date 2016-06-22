@@ -1,0 +1,140 @@
+.button {
+  @include transition(background .25s, color .25s, border .25s);
+  @include border-radius(4px);
+  @include text-shadow(none);
+  @include gotham-n4;
+  background-color: transparent;
+  border: 1px solid rgb(255,255,255);
+  color: rgb(255,255,255);
+  cursor: pointer;
+  display: inline-block!important;
+  font-size: 14px;
+  height: 42px;
+  letter-spacing: .75;
+  line-height: 40px;
+  padding: 0 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  &:active {
+    @include transition(none);
+  }
+  &:hover {
+    border: 1px solid $color-primary;
+    background: $color-primary;
+    color: rgb(255,255,255);
+  }
+  i {
+    margin-left: 10px;
+  }
+}
+
+.btn-multi {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.btn-dark {
+  border: 1px solid $color-dark-navy;
+  color: $color-dark-navy;
+}
+.btn-dark--notSm {
+  border: 1px solid $color-dark-navy;
+  color: $color-dark-navy;
+  @media screen and (max-width: $screen-sm-max) {
+    border: 1px solid rgb(255,255,255);
+    color: rgb(255,255,255);
+  }
+}
+
+
+.play-button {
+  @include transition(background .25s, border .25s, transform .5s);
+  background: rgba(255,255,255,0);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: block;
+  height: 50px;
+  width: 50px;
+  margin: 2em auto 0 auto;
+  position: relative;
+  text-align: center;
+  &:hover {
+    background: #fff;
+    //border: 1px solid $color-primary;
+    .play-button-caret {
+      border-left: 20px solid $color-dark-navy;
+    }
+  }
+}
+
+.play-button-caret {
+  @include transition(border-left .25s);
+  border-left: 20px solid #fff;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -7px;
+  margin-top: -10px;
+}
+
+
+.button.width100{
+  width: 100%;
+}
+
+.button--block {
+  text-align: center;
+  width: 100%;
+}
+
+.button-xs--block {
+  @media screen and (max-width: $screen-xs-min) {
+    display: block;
+    margin: 1em 0 0 0;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.button--default,
+.text-content .button--default {
+  //@include background(linear-gradient(lighten($color-gray-lightish, 8%) 0%, $color-gray-lightish 100%));
+  background: transparent;
+  border: 1px solid $color-gray-lightish;
+  color: $color-gray-lightish;
+  &:hover {
+    //@include background(linear-gradient(lighten($color-gray-lightish--hover, 8%) 0%, $color-gray-lightish--hover 100%));
+    background: $color-gray-lightish;
+    color: #fff;
+  }
+  &:active {
+    @include transition(none);
+    @include background(linear-gradient(lighten($color-gray-lightish--active, 8%) 0%, $color-gray-lightish--active 100%));
+  }
+}
+
+.button--primary,
+.text-content .gform_button,
+.text-content .button--primary {
+  //@include background(linear-gradient(lighten($color-primary, 8%) 0%, $color-primary 100%));
+  background: $color-primary;
+
+  color: #fff;
+  &:hover {
+    //@include background(linear-gradient(lighten($color-primary--hover, 8%) 0%, $color-primary--hover 100%));
+    background: darken($color-primary, 5%);
+    color: #fff;
+  }
+  &:active {
+    background: darken($color-primary, 15%);
+  }
+}
+
+.gform_wrapper .gform_footer input.button,
+.gform_wrapper .gform_footer input[type=submit] {
+  font-size: 14px!important;
+  font-weight: 500!important;
+}

@@ -1,0 +1,22 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  @include gotham-n3;
+  background: $color-background-light;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid $color-dark-navy;
+  margin: 15px auto;
+  width: 90%;
+}
