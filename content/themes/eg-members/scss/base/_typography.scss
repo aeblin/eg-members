@@ -83,43 +83,33 @@ body {
   font-weight: $fontWeight--500;
 }
 
-@mixin mercury-n3 {
-  font-family: $fontFamily--mercury;
+@mixin verlag-n3 {
+  font-family: $fontFamily--verlag;
   font-style: normal;
   font-weight: $fontWeight--300;
 }
-@mixin mercury-i3 {
-  font-family: $fontFamily--mercury;
+@mixin verlag-i3 {
+  font-family: $fontFamily--verlag;
   font-style: italic;
   font-weight: $fontWeight--300;
 }
-@mixin mercury-n4 {
-  font-family: $fontFamily--mercury;
+@mixin verlag-n4 {
+  font-family: $fontFamily--verlag;
   font-style: normal;
   font-weight: $fontWeight--400;
 }
-@mixin mercury-i4 {
-  font-family: $fontFamily--mercury;
+@mixin verlag-i4 {
+  font-family: $fontFamily--verlag;
   font-style: italic;
   font-weight: $fontWeight--400;
 }
-@mixin mercury-n5 {
-  font-family: $fontFamily--mercury;
-  font-style: normal;
-  font-weight: $fontWeight--500;
-}
-@mixin mercury-i5 {
-  font-family: $fontFamily--mercury;
-  font-style: italic;
-  font-weight: $fontWeight--500;
-}
-@mixin mercury-n7 {
-  font-family: $fontFamily--mercury;
+@mixin verlag-n7 {
+  font-family: $fontFamily--verlag;
   font-style: normal;
   font-weight: $fontWeight--700;
 }
-@mixin mercury-i7 {
-  font-family: $fontFamily--mercury;
+@mixin verlag-i7 {
+  font-family: $fontFamily--verlag;
   font-style: italic;
   font-weight: $fontWeight--700;
 }

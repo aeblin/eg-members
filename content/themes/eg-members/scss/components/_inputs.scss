@@ -1,0 +1,15 @@
+.input--with-icon {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.input--with-icon [class*="ion-"], .input--with-icon [class*="fa-"] {
+  position: absolute;;
+  left: 15px;
+  font-size: 27px;
+  line-height: 45px;
+}
+
+.input--with-icon input {
+  padding-left: 49px !important;
+}

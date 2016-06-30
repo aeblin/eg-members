@@ -2,7 +2,7 @@
   @include transition(background .25s, color .25s, border .25s);
   @include border-radius(4px);
   @include text-shadow(none);
-  @include gotham-n4;
+  @include verlag-n7;
   background-color: transparent;
   border: 1px solid rgb(255,255,255);
   color: rgb(255,255,255);
@@ -27,6 +27,15 @@
   i {
     margin-left: 10px;
   }
+}
+
+.btn-signin {
+  border-radius: 0px;
+  background: rgb(255,255,255);
+  color: $color-gray-default;
+  height: 56px;
+  font-size: 24px;
+  width: 100%;
 }
 
 .btn-multi {
