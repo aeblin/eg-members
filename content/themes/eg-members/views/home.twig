@@ -1,18 +1,28 @@
 {% extends "base.twig" %}
 
 {% block content %}
-  <main class="layoutMain">
-    <div class="homepage-hero-module">
-      <div class="video-container">
-          <div class="filter"></div>
-          <video autoplay loop class="fillWidth">
-              <source src="PATH_TO_MP4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
-              <source src="PATH_TO_WEBM" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
-          </video>
-          <div class="poster hidden">
-              <img src="PATH_TO_JPEG" alt="">
-          </div>
+
+    <main class="layoutMain">
+      <div class="homepage-hero-module">
+        <div class="filter"></div>
+          {% if (mpLoggedIn == true) %}
+            <div class="flex-container">
+              <h2>You're logged in, man.</h2>
+            </div>
+          {% else %}
+            <div class="flex-container">
+              {% filter shortcodes %}
+                [mepr-login-form]
+              {% endfilter %}
+            </div>
+          {% endif %}
+        <video autoplay loop class="fullscreen">
+          <source src="{{site.theme.link}}/video/sunset-lapse.webm" type="video/webm" />Your browser does not support the video tag. Consider upgrading your browser.
+          <source src="{{site.theme.link}}/video/sunset-lapse.mp4" type="video/mp4" />Your browser does not support the video tag. Consider upgrading your browser.
+        </video>
+        <div class="poster hidden">
+          {# <img src="PATH_TO_JPEG" alt=""> #}
+        </div>
       </div>
-    </div>
-  </main>
+    </main>
 {% endblock %}

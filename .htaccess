@@ -14,4 +14,18 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
 </IfModule>
 
+# BEGIN MemberPress Rules
+<IfModule mod_rewrite.c>
+
+RewriteCond %{HTTP_COOKIE} mplk=([a-zA-Z0-9]+)
+RewriteCond /Users/aeblin/eg-members/content/uploads/mepr/rules/%1 -f
+RewriteRule ^(.*)$ - [L]
+
+RewriteCond %{REQUEST_URI} !^/(wp-admin|wp-includes|wp-content/plugins|wp-content/themes)
+RewriteCond %{REQUEST_URI} \.(zip|gz|tar|doc|docx|xls|xlsx|xlsm|pdf|mp4|m4v|mp3|ZIP|GZ|TAR|DOC|DOCX|XLS|XLSX|XLSM|PDF|MP4|M4V|MP3)$
+RewriteRule . /content/plugins/memberpress/lock.php [L]
+
+</IfModule>
+# END MemberPress Rules
+
 # END WordPress
