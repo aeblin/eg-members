@@ -1,0 +1,19 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+  <article>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            {{ post.content }}
+            {% filter shortcodes %}
+              [mepr-login-form]
+            {% endfilter %}
+          </div>
+        </div>
+       </div>
+    </section>
+  </article>
+{% endblock %}
