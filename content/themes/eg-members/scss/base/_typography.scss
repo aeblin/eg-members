@@ -103,16 +103,6 @@ body {
   font-style: italic;
   font-weight: $fontWeight--400;
 }
-@mixin verlag-n5 {
-  font-family: $fontFamily--verlag;
-  font-style: normal;
-  font-weight: $fontWeight--500;
-}
-@mixin verlag-i5 {
-  font-family: $fontFamily--verlag;
-  font-style: italic;
-  font-weight: $fontWeight--500;
-}
 @mixin verlag-n7 {
   font-family: $fontFamily--verlag;
   font-style: normal;

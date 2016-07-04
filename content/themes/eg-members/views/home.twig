@@ -7,13 +7,13 @@
         <div class="filter"></div>
           {% if (mpLoggedIn == true) %}
             <div class="flex-container">
-              <h2>You're logged in, man.</h2>
+              <div class="panel">
+                <h2>You're logged in, {{mpCurrentUser}}</h2>
+              </div>
             </div>
           {% else %}
             <div class="flex-container">
-              {% filter shortcodes %}
-                [mepr-login-form]
-              {% endfilter %}
+              {% include "page-signin.twig" %}
             </div>
           {% endif %}
         <video autoplay loop class="fullscreen">

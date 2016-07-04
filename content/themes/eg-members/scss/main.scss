@@ -9,7 +9,6 @@
 // @import "vendors/bootstrap-carousel";
 
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
-// @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/normalize";
 // @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
 // @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables";
 // @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/grid";
@@ -37,11 +36,13 @@
 @import "components/boxes";
 @import "components/buttons";
 // @import "components/hero";
+@import "components/inputs";
 // @import "components/jumbotron";
 // @import "components/metabar";
 // @import "components/posts";
 // @import "components/teases";
 // @import "components/testimonials";
+@import "components/signin";
 @import "components/video";
 
 // @import "pages/blog";

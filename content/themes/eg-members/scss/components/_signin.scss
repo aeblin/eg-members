@@ -1,0 +1,51 @@
+.sign-in {
+  color: rgb(255,255,255);
+  text-align: center;
+  margin: 0 auto;
+  width: 50%;
+  min-width: 600px;
+}
+.sign-in h2 {
+  @include verlag-n7;
+  font-size: 3em;
+  letter-spacing: 0.125em;
+  text-transform: uppercase;
+}
+
+.sign-in--form {
+  margin: 45px auto 0px;
+  width: 60%;
+  min-width: 350px;
+}
+
+.sign-in--form .form-control {
+  background: rgba(255,255,255,0.5);
+  border: 0px;
+  border-radius: 0px;
+  font-size: 1.33em;
+  height: 45px;
+  padding: 5px 10px;
+}
+.sign-in--form .input-group-addon {
+  background: rgba(255,255,255,0.75);
+  color: rgb(255,255,255);
+  border: 0px;
+  font-size: 1.75em;
+  height: 45px;
+  padding: 5px 10px;
+}
+
+.sign-in--form hr {
+  margin-top: 45px;
+  border-top: 2px solid rgba(255,255,255,0.3);
+  width: 100%;
+}
+
+.login-action {
+  @include transition(color .25s);
+  letter-spacing: 0.75px;
+  text-transform: uppercase;
+  &:hover {
+    color: $color-primary;
+  }
+}

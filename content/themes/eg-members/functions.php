@@ -38,6 +38,7 @@ class StarterSite extends TimberSite {
 		$context['site'] = $this;
 		if (MeprUtils::is_user_logged_in()) {
 			$context['mpLoggedIn'] = true;
+			$context['mpCurrentUser'] = MeprUtils::get_currentuserinfo();
 		}
 		return $context;
 	}

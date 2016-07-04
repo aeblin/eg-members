@@ -9265,7 +9265,7 @@ body {
   line-height: 1;
 }
 
-/* line 127, ../scss/base/_typography.scss */
+/* line 117, ../scss/base/_typography.scss */
 .header-xsmall {
   color: #999;
   font-size: 0.75em;
@@ -9275,42 +9275,42 @@ body {
   text-transform: uppercase;
 }
 
-/* line 135, ../scss/base/_typography.scss */
+/* line 125, ../scss/base/_typography.scss */
 .header-small {
   font-size: 0.85em;
   line-height: 1.75;
   margin-bottom: .5em;
 }
 
-/* line 140, ../scss/base/_typography.scss */
+/* line 130, ../scss/base/_typography.scss */
 .header-normal {
   font-weight: 500;
   line-height: 1.75;
   margin-bottom: .5em;
 }
 
-/* line 145, ../scss/base/_typography.scss */
+/* line 135, ../scss/base/_typography.scss */
 .header-medium {
   font-size: 2.35em;
   line-height: 1.75;
   margin-bottom: .5em;
 }
 
-/* line 150, ../scss/base/_typography.scss */
+/* line 140, ../scss/base/_typography.scss */
 .header-large {
   font-size: 2.75em;
   line-height: 1;
   margin-bottom: .5em;
 }
 
-/* line 155, ../scss/base/_typography.scss */
+/* line 145, ../scss/base/_typography.scss */
 .header-xlarge {
   font-size: 3.75em;
   line-height: 1;
   margin-bottom: .25em;
 }
 
-/* line 160, ../scss/base/_typography.scss */
+/* line 150, ../scss/base/_typography.scss */
 .header-xxlarge {
   font-size: 5em;
   line-height: 1;
@@ -9318,67 +9318,67 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-  /* line 167, ../scss/base/_typography.scss */
+  /* line 157, ../scss/base/_typography.scss */
   .header-xsmall {
     font-size: 0.85em;
   }
 
-  /* line 170, ../scss/base/_typography.scss */
+  /* line 160, ../scss/base/_typography.scss */
   .header-small {
     font-size: 1.25em;
   }
 
-  /* line 173, ../scss/base/_typography.scss */
+  /* line 163, ../scss/base/_typography.scss */
   .header-medium {
     font-size: 1.5em;
   }
 
-  /* line 176, ../scss/base/_typography.scss */
+  /* line 166, ../scss/base/_typography.scss */
   .header-large {
     font-size: 2em;
   }
 
-  /* line 179, ../scss/base/_typography.scss */
+  /* line 169, ../scss/base/_typography.scss */
   .header-xlarge {
     font-size: 2.5em;
   }
 
-  /* line 182, ../scss/base/_typography.scss */
+  /* line 172, ../scss/base/_typography.scss */
   .header-xxlarge {
     font-size: 3em;
   }
 }
-/* line 187, ../scss/base/_typography.scss */
+/* line 177, ../scss/base/_typography.scss */
 a {
   text-decoration: none;
 }
-/* line 189, ../scss/base/_typography.scss */
+/* line 179, ../scss/base/_typography.scss */
 a:hover {
   text-decoration: none;
 }
-/* line 192, ../scss/base/_typography.scss */
+/* line 182, ../scss/base/_typography.scss */
 a:focus {
   text-decoration: none;
 }
 
-/* line 197, ../scss/base/_typography.scss */
+/* line 187, ../scss/base/_typography.scss */
 a.link {
   -webkit-transition: color 0.25s;
   -o-transition: color 0.25s;
   transition: color 0.25s;
   color: #002a48;
 }
-/* line 200, ../scss/base/_typography.scss */
+/* line 190, ../scss/base/_typography.scss */
 a.link:hover {
   color: #0084dd;
 }
 
-/* line 205, ../scss/base/_typography.scss */
+/* line 195, ../scss/base/_typography.scss */
 p {
   line-height: 1.4;
 }
 
-/* line 209, ../scss/base/_typography.scss */
+/* line 199, ../scss/base/_typography.scss */
 .text-content {
   font-family: "Gotham SSm A", "Gotham SSm B", "Avenir-Book", sans-serif;
   font-style: normal;
@@ -9388,7 +9388,7 @@ p {
   margin-bottom: 1.2em;
 }
 
-/* line 216, ../scss/base/_typography.scss */
+/* line 206, ../scss/base/_typography.scss */
 .text-content-large {
   font-family: "Gotham SSm A", "Gotham SSm B", "Avenir-Book", sans-serif;
   font-style: normal;
@@ -9397,7 +9397,7 @@ p {
   margin-bottom: 1.35em;
 }
 
-/* line 224, ../scss/base/_typography.scss */
+/* line 214, ../scss/base/_typography.scss */
 .text-content a, .text-content-large a, .noimgOverview a {
   text-decoration: none;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.6) 50%);
@@ -9405,7 +9405,7 @@ p {
   background-size: 2px 2px;
   background-position: 0 18px;
 }
-/* line 231, ../scss/base/_typography.scss */
+/* line 221, ../scss/base/_typography.scss */
 .text-content a:hover, .text-content-large a:hover, .noimgOverview a:hover {
   text-decoration: none;
   color: #002a48;
@@ -9416,7 +9416,7 @@ p {
 }
 
 @media not all, only screen and (min-resolution: 2dppx), only screen and (-webkit-min-device-pixel-ratio: 2) {
-  /* line 243, ../scss/base/_typography.scss */
+  /* line 233, ../scss/base/_typography.scss */
   .text-content a, .text-content-large a, .noimgOverview a {
     text-decoration: none;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.8) 75%);
@@ -9424,7 +9424,7 @@ p {
     background-size: 2px 2px;
     background-position: 0 18px;
   }
-  /* line 250, ../scss/base/_typography.scss */
+  /* line 240, ../scss/base/_typography.scss */
   .text-content a:hover, .text-content-large a:hover, .noimgOverview a:hover {
     text-decoration: none;
     color: #002a48;
@@ -9434,28 +9434,28 @@ p {
     background-position: 0 18px;
   }
 }
-/* line 262, ../scss/base/_typography.scss */
+/* line 252, ../scss/base/_typography.scss */
 strong, b, .strong, .text-bold {
   font-weight: 500;
 }
 
-/* line 265, ../scss/base/_typography.scss */
+/* line 255, ../scss/base/_typography.scss */
 em, i, .em {
   font-style: italic;
 }
 
-/* line 269, ../scss/base/_typography.scss */
+/* line 259, ../scss/base/_typography.scss */
 h1, h2, h3, h4, h5 {
   -webkit-font-smoothing: antialiased;
 }
 
-/* line 272, ../scss/base/_typography.scss */
+/* line 262, ../scss/base/_typography.scss */
 h3 {
   font-size: 2.35em;
   letter-spacing: -0.02em;
 }
 
-/* line 277, ../scss/base/_typography.scss */
+/* line 267, ../scss/base/_typography.scss */
 h4 {
   font-size: 1.35em;
   font-weight: 600;
@@ -9464,7 +9464,7 @@ h4 {
   margin-bottom: 15px;
 }
 
-/* line 286, ../scss/base/_typography.scss */
+/* line 276, ../scss/base/_typography.scss */
 .sectionHeader {
   font-family: "Tungsten A", "Tungsten B", sans-serif;
   font-style: normal;
@@ -9476,7 +9476,7 @@ h4 {
   margin-bottom: 15px;
 }
 
-/* line 295, ../scss/base/_typography.scss */
+/* line 285, ../scss/base/_typography.scss */
 .ul-bulleted {
   list-style: none;
   margin-left: 0;
@@ -9484,17 +9484,17 @@ h4 {
   text-indent: -.85em;
 }
 
-/* line 301, ../scss/base/_typography.scss */
+/* line 291, ../scss/base/_typography.scss */
 .ul-bulleted li {
   margin-bottom: 1em;
 }
 
-/* line 304, ../scss/base/_typography.scss */
+/* line 294, ../scss/base/_typography.scss */
 .ul-bulleted li:before {
   content: "\02022 \0020";
 }
 
-/* line 308, ../scss/base/_typography.scss */
+/* line 298, ../scss/base/_typography.scss */
 .icon {
   font-size: 2.75em;
 }
@@ -9663,9 +9663,9 @@ hr {
   -webkit-border-radius: 4px;
   border-radius: 4px;
   text-shadow: none;
-  font-family: "Gotham SSm A", "Gotham SSm B", "Avenir-Book", sans-serif;
+  font-family: "Verlag A", "Verlag B", sans-serif;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
   background-color: transparent;
   border: 1px solid white;
   color: white;
@@ -9688,8 +9688,8 @@ hr {
 }
 /* line 22, ../scss/components/_buttons.scss */
 .button:hover {
-  border: 1px solid #0065a4;
-  background: #0065a4;
+  border: 1px solid #f16724;
+  background: #f16724;
   color: white;
 }
 /* line 27, ../scss/components/_buttons.scss */
@@ -9698,31 +9698,41 @@ hr {
 }
 
 /* line 32, ../scss/components/_buttons.scss */
+.btn-signin {
+  border-radius: 0px;
+  background: white;
+  color: #434244;
+  height: 56px;
+  font-size: 24px;
+  width: 100%;
+}
+
+/* line 41, ../scss/components/_buttons.scss */
 .btn-multi {
   margin-left: 15px;
   margin-right: 15px;
 }
 
-/* line 37, ../scss/components/_buttons.scss */
+/* line 46, ../scss/components/_buttons.scss */
 .btn-dark {
   border: 1px solid #002a48;
   color: #002a48;
 }
 
-/* line 41, ../scss/components/_buttons.scss */
+/* line 50, ../scss/components/_buttons.scss */
 .btn-dark--notSm {
   border: 1px solid #002a48;
   color: #002a48;
 }
 @media screen and (max-width: 991px) {
-  /* line 41, ../scss/components/_buttons.scss */
+  /* line 50, ../scss/components/_buttons.scss */
   .btn-dark--notSm {
     border: 1px solid white;
     color: white;
   }
 }
 
-/* line 51, ../scss/components/_buttons.scss */
+/* line 60, ../scss/components/_buttons.scss */
 .play-button {
   -webkit-transition: background 0.25s, border 0.25s, transform 0.5s;
   -o-transition: background 0.25s, border 0.25s, transform 0.5s;
@@ -9737,16 +9747,16 @@ hr {
   position: relative;
   text-align: center;
 }
-/* line 62, ../scss/components/_buttons.scss */
+/* line 71, ../scss/components/_buttons.scss */
 .play-button:hover {
   background: #fff;
 }
-/* line 65, ../scss/components/_buttons.scss */
+/* line 74, ../scss/components/_buttons.scss */
 .play-button:hover .play-button-caret {
   border-left: 20px solid #002a48;
 }
 
-/* line 71, ../scss/components/_buttons.scss */
+/* line 80, ../scss/components/_buttons.scss */
 .play-button-caret {
   -webkit-transition: border-left 0.25s;
   -o-transition: border-left 0.25s;
@@ -9761,19 +9771,19 @@ hr {
   margin-top: -10px;
 }
 
-/* line 84, ../scss/components/_buttons.scss */
+/* line 93, ../scss/components/_buttons.scss */
 .button.width100 {
   width: 100%;
 }
 
-/* line 88, ../scss/components/_buttons.scss */
+/* line 97, ../scss/components/_buttons.scss */
 .button--block {
   text-align: center;
   width: 100%;
 }
 
 @media screen and (max-width: 480px) {
-  /* line 93, ../scss/components/_buttons.scss */
+  /* line 102, ../scss/components/_buttons.scss */
   .button-xs--block {
     display: block;
     margin: 1em 0 0 0;
@@ -9782,20 +9792,20 @@ hr {
   }
 }
 
-/* line 102, ../scss/components/_buttons.scss */
+/* line 111, ../scss/components/_buttons.scss */
 .button--default,
 .text-content .button--default {
   background: transparent;
   border: 1px solid #999999;
   color: #999999;
 }
-/* line 108, ../scss/components/_buttons.scss */
+/* line 117, ../scss/components/_buttons.scss */
 .button--default:hover,
 .text-content .button--default:hover {
   background: #999999;
   color: #fff;
 }
-/* line 113, ../scss/components/_buttons.scss */
+/* line 122, ../scss/components/_buttons.scss */
 .button--default:active,
 .text-content .button--default:active {
   -webkit-transition: none;
@@ -9808,32 +9818,117 @@ hr {
   background: linear-gradient(#878787 0%, #737373 100%);
 }
 
-/* line 119, ../scss/components/_buttons.scss */
+/* line 128, ../scss/components/_buttons.scss */
 .button--primary,
 .text-content .gform_button,
 .text-content .button--primary {
-  background: #0065a4;
+  background: #f16724;
   color: #fff;
 }
-/* line 126, ../scss/components/_buttons.scss */
+/* line 135, ../scss/components/_buttons.scss */
 .button--primary:hover,
 .text-content .gform_button:hover,
 .text-content .button--primary:hover {
-  background: #00558b;
+  background: #ec570f;
   color: #fff;
 }
-/* line 131, ../scss/components/_buttons.scss */
+/* line 140, ../scss/components/_buttons.scss */
 .button--primary:active,
 .text-content .gform_button:active,
 .text-content .button--primary:active {
-  background: #003658;
+  background: #bc460c;
 }
 
-/* line 136, ../scss/components/_buttons.scss */
+/* line 145, ../scss/components/_buttons.scss */
 .gform_wrapper .gform_footer input.button,
 .gform_wrapper .gform_footer input[type=submit] {
   font-size: 14px !important;
   font-weight: 500 !important;
+}
+
+/* line 1, ../scss/components/_inputs.scss */
+.input--with-icon {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+/* line 6, ../scss/components/_inputs.scss */
+.input--with-icon [class*="ion-"], .input--with-icon [class*="fa-"] {
+  position: absolute;
+  left: 15px;
+  font-size: 27px;
+  line-height: 45px;
+}
+
+/* line 13, ../scss/components/_inputs.scss */
+.input--with-icon input {
+  padding-left: 49px !important;
+}
+
+/* line 1, ../scss/components/_signin.scss */
+.sign-in {
+  color: white;
+  text-align: center;
+  margin: 0 auto;
+  width: 50%;
+  min-width: 600px;
+}
+
+/* line 8, ../scss/components/_signin.scss */
+.sign-in h2 {
+  font-family: "Verlag A", "Verlag B", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3em;
+  letter-spacing: 0.125em;
+  text-transform: uppercase;
+}
+
+/* line 15, ../scss/components/_signin.scss */
+.sign-in--form {
+  margin: 45px auto 0px;
+  width: 60%;
+  min-width: 350px;
+}
+
+/* line 21, ../scss/components/_signin.scss */
+.sign-in--form .form-control {
+  background: rgba(255, 255, 255, 0.5);
+  border: 0px;
+  border-radius: 0px;
+  font-size: 1.33em;
+  height: 45px;
+  padding: 5px 10px;
+}
+
+/* line 29, ../scss/components/_signin.scss */
+.sign-in--form .input-group-addon {
+  background: rgba(255, 255, 255, 0.75);
+  color: white;
+  border: 0px;
+  font-size: 1.75em;
+  height: 45px;
+  padding: 5px 10px;
+}
+
+/* line 38, ../scss/components/_signin.scss */
+.sign-in--form hr {
+  margin-top: 45px;
+  border-top: 2px solid rgba(255, 255, 255, 0.3);
+  width: 100%;
+}
+
+/* line 44, ../scss/components/_signin.scss */
+.login-action {
+  -webkit-transition: color 0.25s;
+  -o-transition: color 0.25s;
+  transition: color 0.25s;
+  letter-spacing: 0.75px;
+  text-transform: uppercase;
+}
+/* line 48, ../scss/components/_signin.scss */
+.login-action:hover {
+  color: #f16724;
 }
 
 /* line 1, ../scss/components/_video.scss */
@@ -9922,23 +10017,18 @@ video.fullscreen {
   height: 100vh;
   width: 100vw;
 }
-/* line 9, ../scss/pages/_home.scss */
-.flex-container h2 {
-  margin: 0;
-  text-transform: uppercase;
-  letter-spacing: 0.125em;
-}
 
-/* line 15, ../scss/pages/_home.scss */
+/* line 10, ../scss/pages/_home.scss */
 .life-gps-icon {
-  margin: 25px auto;
+  max-width: 200px;
+  margin: 0px auto 25px;
 }
 
-/* line 53, ../scss/main.scss */
+/* line 54, ../scss/main.scss */
 a {
   color: inherit;
 }
-/* line 55, ../scss/main.scss */
+/* line 56, ../scss/main.scss */
 a:hover, a:focus {
   color: inherit;
 }

@@ -1,16 +1,15 @@
 // Color Variables //-------
-$color-primary: rgb(0,101,164);
+$color-primary: rgb(241,103,36);
 $color-primary--hover: lighten($color-primary, 10%);
 $color-primary--active: lighten($color-primary, 15%);
-$color-secondary: rgb(88,176,226);
+$color-secondary: rgb(240,86,61);
 $color-background: rgb(255,255,255);
 $color-white: rgb(255,255,255);
 
-$color-gray-light: rgb(250,250,250);
 $color-gray-lightish: rgb(153,153,153);
 $color-gray-lightish--hover: darken($color-gray-lightish, 10%);
 $color-gray-lightish--active: darken($color-gray-lightish, 15%);
-$color-gray-default: rgb(92, 109, 122);
+$color-gray-default: rgb(67, 66, 68);
 
 $color-dark-navy: rgb(0, 42, 72);
 $color-superdark-navy: rgb(0,28,45);
@@ -23,8 +22,6 @@ $color-input-blueFocus: rgba(0,132,221,.7);
 
 $color-text: rgb(60,60,60);
 $color-text-light: $color-gray-lightish;
-
-
 
 $boxShadow-dark-default: .35;
 $boxShadow-dark-half: ($boxShadow-dark-default/2);

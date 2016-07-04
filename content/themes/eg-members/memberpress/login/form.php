@@ -15,30 +15,32 @@
 <?php else: ?>
   <?php echo $message; ?>
   <!-- mp-login-form-start --> <?php //DON'T GET RID OF THIS HTML COMMENT PLEASE IT'S USEFUL FOR SOME REGEX WE'RE DOING ?>
-  <form name="mepr_loginform" id="mepr_loginform" class="mepr-form" action="<?php echo $login_url; ?>" method="post">
-    <div class="mp-form-row mepr_username">
+  <form name="mepr_loginform" id="mepr_loginform" class="sign-in--form" action="<?php echo $login_url; ?>" method="post">
+    <div class="mp-form-row login-username input--with-icon">
       <div class="mp-form-label">
         <?php /* <span class="cc-error"><?php _ex('Username Required', 'ui', 'memberpress'); ?></span> */ ?>
       </div>
-      <input type="text" name="log" id="user_login" value="<?php echo (isset($_POST['log'])?$_POST['log']:''); ?>" />
+      <i class="ion-ios-person-outline"></i>
+      <input class="form-control" type="text" name="log" id="user_login" value="<?php echo (isset($_POST['log'])?$_POST['log']:''); ?>" />
     </div>
-    <div class="mp-form-row mepr_password">
+    <div class="mp-form-row login-password input--with-icon">
       <div class="mp-form-label">
         <?php /* <span class="cc-error"><?php _ex('Password Required', 'ui', 'memberpress'); ?></span> */ ?>
       </div>
-      <input type="password" name="pwd" id="user_pass" value="<?php echo (isset($_POST['pwd'])?$_POST['pwd']:''); ?>" />
+      <i class="ion-ios-locked-outline"></i>
+      <input class="form-control" type="password" name="pwd" id="user_pass" value="<?php echo (isset($_POST['pwd'])?$_POST['pwd']:''); ?>" />
     </div>
-    <div class="mp-spacer">&nbsp;</div>
     <div class="submit">
-      <input type="submit" name="wp-submit" id="wp-submit" class="button-primary mepr-share-button " value="<?php _ex('Log In', 'ui', 'memberpress'); ?>" />
+      <input type="submit" name="wp-submit" id="wp-submit" class="button btn-signin mepr-share-button " value="<?php _ex('Sign In', 'ui', 'memberpress'); ?>" />
       <input type="hidden" name="redirect_to" value="<?php echo esc_html($redirect_to); ?>" />
       <input type="hidden" name="mepr_process_login_form" value="true" />
       <input type="hidden" name="mepr_is_login_page" value="<?php echo ($is_login_page)?'true':'false'; ?>" />
     </div>
+    <hr/>
   </form>
-  <div class="mp-spacer">&nbsp;</div>
+
   <div class="mepr-login-actions">
-    <a href="<?php echo $forgot_password_url; ?>"><?php _ex('Reset Password', 'ui', 'memberpress'); ?></a>
+    <a class="login-action" href="<?php echo $forgot_password_url; ?>"><?php _ex('Forgot Your Password?', 'ui', 'memberpress'); ?></a>
   </div>
   <!-- mp-login-form-end --> <?php //DON'T GET RID OF THIS HTML COMMENT PLEASE IT'S USEFUL FOR SOME REGEX WE'RE DOING ?>
 
