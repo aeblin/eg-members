@@ -1,0 +1,15 @@
+{% block content %}
+  <section class="sign-in">
+    <img class="life-gps-icon" src="{{site.theme.link}}/img/LifeGPS-CertifiedOutline-White.svg" />
+    <h2>Member Area</h2>
+    <div class="sign-in--form">
+      <div class="sign-in--mf">
+        {% filter shortcodes %}
+          [memberful_sign_in_link]Sign in[/memberful_sign_in_link]
+        {% endfilter %}
+      </div>
+      <hr/>
+      <a class="sign-in--action">Need to register?</a>
+    </div>
+  </section>
+{% endblock %}

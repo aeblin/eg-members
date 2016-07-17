@@ -1,19 +1,11 @@
 {% extends "base.twig" %}
 
 {% block content %}
-
-  <article>
-    <section>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            {{ post.content }}
-            {% filter shortcodes %}
-              [mepr-login-form]
-            {% endfilter %}
-          </div>
-        </div>
-       </div>
-    </section>
-  </article>
+  <section class="sign-in">
+    <img class="life-gps-icon" src="{{site.theme.link}}/img/LifeGPS-CertifiedOutline-White.svg" />
+    <h2>Member Area</h2>
+    {% filter shortcodes %}
+      [mepr-login-form]
+    {% endfilter %}
+  </section>
 {% endblock %}

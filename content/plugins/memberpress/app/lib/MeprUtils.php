@@ -1062,7 +1062,7 @@ class MeprUtils {
     global $current_user;
 
     self::include_pluggables('get_currentuserinfo');
-    get_currentuserinfo();
+    wp_get_current_user();
 
     if(isset($current_user->ID) && $current_user->ID > 0) {
       return new MeprUser($current_user->ID);

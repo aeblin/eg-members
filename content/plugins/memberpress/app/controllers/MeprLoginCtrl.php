@@ -69,8 +69,13 @@ class MeprLoginCtrl extends MeprBaseCtrl {
 
     // if we're on a page other than the login page and we're in a shortcode
     if((!isset($_REQUEST['redirect_to']) || empty($_REQUEST['redirect_to'])) &&
-       false!==$shortcode && !is_page($login_page_id) && false===$widget_use_redirect_urls) {
+       false!==$shortcode && !is_page($login_page_id) && !is_home() && false===$widget_use_redirect_urls) {
       $redirect_to = MeprUtils::get_permalink($current_post->ID);
+    }
+
+    // if we're on homepage and trying to login - AE: Did this on 6/7/16
+    if(isset($_REQUEST['redirect_to']) && !empty($_REQUEST['redirect_to']) && is_home()) {
+      $redirect_to = $_REQUEST['redirect_to'];
     }
 
     // Check if we've got an unauth page set here

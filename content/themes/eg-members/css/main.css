@@ -65,6 +65,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
+/* line 2, ../scss/vendors/_memberful.scss */
+.js .iframe .memberful-box header h1 {
+  font-size: 24px !important;
+  text-align: center;
+}
+
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
@@ -9871,10 +9877,16 @@ hr {
   text-align: center;
   margin: 0 auto;
   width: 50%;
-  min-width: 600px;
+  max-width: 600px;
+}
+@media screen and (max-width: 991px) {
+  /* line 1, ../scss/components/_signin.scss */
+  .sign-in {
+    width: 100%;
+  }
 }
 
-/* line 8, ../scss/components/_signin.scss */
+/* line 11, ../scss/components/_signin.scss */
 .sign-in h2 {
   font-family: "Verlag A", "Verlag B", sans-serif;
   font-style: normal;
@@ -9884,15 +9896,63 @@ hr {
   text-transform: uppercase;
 }
 
-/* line 15, ../scss/components/_signin.scss */
+/* line 18, ../scss/components/_signin.scss */
 .sign-in--form {
   margin: 45px auto 0px;
   width: 60%;
   min-width: 350px;
 }
 
-/* line 21, ../scss/components/_signin.scss */
+/* line 25, ../scss/components/_signin.scss */
+.sign-in--mf a {
+  -webkit-transition: background 0.25s, color 0.25s, border 0.25s;
+  -o-transition: background 0.25s, color 0.25s, border 0.25s;
+  transition: background 0.25s, color 0.25s, border 0.25s;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  text-shadow: none;
+  font-family: "Verlag A", "Verlag B", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 0px;
+  color: #434244;
+  cursor: pointer;
+  display: inline-block !important;
+  font-size: 24px;
+  height: 56px;
+  width: 100%;
+  letter-spacing: 0.75px;
+  line-height: 55px;
+  padding: 0 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+/* line 45, ../scss/components/_signin.scss */
+.sign-in--mf a:active {
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+/* line 48, ../scss/components/_signin.scss */
+.sign-in--mf a:hover {
+  border: 1px solid #f16724;
+  background: #f16724;
+  color: white;
+}
+/* line 53, ../scss/components/_signin.scss */
+.sign-in--mf a i {
+  margin-left: 10px;
+}
+
+/* line 58, ../scss/components/_signin.scss */
 .sign-in--form .form-control {
+  -webkit-transition: background 0.25s;
+  -o-transition: background 0.25s;
+  transition: background 0.25s;
   background: rgba(255, 255, 255, 0.5);
   border: 0px;
   border-radius: 0px;
@@ -9900,8 +9960,12 @@ hr {
   height: 45px;
   padding: 5px 10px;
 }
+/* line 66, ../scss/components/_signin.scss */
+.sign-in--form .form-control:focus {
+  background: rgba(255, 255, 255, 0.7);
+}
 
-/* line 29, ../scss/components/_signin.scss */
+/* line 71, ../scss/components/_signin.scss */
 .sign-in--form .input-group-addon {
   background: rgba(255, 255, 255, 0.75);
   color: white;
@@ -9911,23 +9975,24 @@ hr {
   padding: 5px 10px;
 }
 
-/* line 38, ../scss/components/_signin.scss */
+/* line 80, ../scss/components/_signin.scss */
 .sign-in--form hr {
   margin-top: 45px;
   border-top: 2px solid rgba(255, 255, 255, 0.3);
   width: 100%;
 }
 
-/* line 44, ../scss/components/_signin.scss */
-.login-action {
+/* line 86, ../scss/components/_signin.scss */
+.sign-in--action {
   -webkit-transition: color 0.25s;
   -o-transition: color 0.25s;
   transition: color 0.25s;
+  cursor: pointer;
   letter-spacing: 0.75px;
   text-transform: uppercase;
 }
-/* line 48, ../scss/components/_signin.scss */
-.login-action:hover {
+/* line 91, ../scss/components/_signin.scss */
+.sign-in--action:hover {
   color: #f16724;
 }
 
@@ -10024,11 +10089,11 @@ video.fullscreen {
   margin: 0px auto 25px;
 }
 
-/* line 54, ../scss/main.scss */
+/* line 55, ../scss/main.scss */
 a {
   color: inherit;
 }
-/* line 56, ../scss/main.scss */
+/* line 57, ../scss/main.scss */
 a:hover, a:focus {
   color: inherit;
 }

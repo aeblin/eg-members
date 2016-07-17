@@ -3,7 +3,10 @@
   text-align: center;
   margin: 0 auto;
   width: 50%;
-  min-width: 600px;
+  max-width: 600px;
+  @media screen and (max-width: $screen-sm-max) {
+    width: 100%;
+  }
 }
 .sign-in h2 {
   @include verlag-n7;
@@ -18,14 +21,53 @@
   min-width: 350px;
 }
 
+// I hate this, but it's easier than rebuilding a shortcode
+.sign-in--mf a {
+  @include transition(background .25s, color .25s, border .25s);
+  @include border-radius(4px);
+  @include text-shadow(none);
+  @include verlag-n7;
+  background-color: rgb(255,255,255);
+  border: 1px solid rgb(255,255,255);
+  border-radius: 0px;
+  color: $color-gray-default;
+  cursor: pointer;
+  display: inline-block!important;
+  font-size: 24px;
+  height: 56px;
+  width: 100%;
+  letter-spacing: 0.75px;
+  line-height: 55px;
+  padding: 0 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  &:active {
+    @include transition(none);
+  }
+  &:hover {
+    border: 1px solid $color-primary;
+    background: $color-primary;
+    color: rgb(255,255,255);
+  }
+  i {
+    margin-left: 10px;
+  }
+}
+
 .sign-in--form .form-control {
+  @include transition(background .25s);
   background: rgba(255,255,255,0.5);
   border: 0px;
   border-radius: 0px;
   font-size: 1.33em;
   height: 45px;
   padding: 5px 10px;
+    &:focus {
+    background: rgba(255,255,255,0.7);
+  }
 }
+
 .sign-in--form .input-group-addon {
   background: rgba(255,255,255,0.75);
   color: rgb(255,255,255);
@@ -41,8 +83,9 @@
   width: 100%;
 }
 
-.login-action {
+.sign-in--action {
   @include transition(color .25s);
+  cursor: pointer;
   letter-spacing: 0.75px;
   text-transform: uppercase;
   &:hover {

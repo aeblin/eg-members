@@ -23,7 +23,9 @@
     <form name="mepr_loginform" id="mepr_loginform" class="mepr-form" action="<?php echo $login_url; ?>" method="post">
       <div class="mp-form-row mepr_username">
         <div class="mp-form-label">
-          <label for="log"><?php echo ($mepr_options->username_is_email)?_x('Username or E-mail', 'ui', 'memberpress'):_x('Username', 'ui', 'memberpress'); ?></label>
+          <label for="log">
+            <?php echo ($mepr_options->username_is_email)?_x('Username or E-mail', 'ui', 'memberpress'):_x('Username', 'ui', 'memberpress'); ?>
+          </label>
           <?php /* <span class="cc-error"><?php _ex('Username Required', 'ui', 'memberpress'); ?></span> */ ?>
         </div>
         <input type="text" name="log" id="user_login" value="<?php echo (isset($_POST['log'])?$_POST['log']:''); ?>" />

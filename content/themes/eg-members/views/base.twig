@@ -1,17 +1,19 @@
 {% block html_head_container %}
   {% include 'head.twig' %}
-  {% block head %}
+    {% block head %}
   {% endblock %}
 {% endblock %}
-  
+
   <body class="{{ body_class }}" data-template="base.twig">
    {# include 'nav-mobile.twig' #}
 
     <div class="js-wrap">
-  
-      {% block header %}
-        {# include 'header.twig' #}
-      {% endblock %}
+
+      {% if userLoggedIn %}
+        {% block header %}
+          {% include 'header.twig' %}
+        {% endblock %}
+      {% endif %}
 
       {% block content %}
         Sorry no content.
@@ -23,7 +25,7 @@
       {% endblock %}
 
     </div>
-    
+
     {% include 'footer-js.twig' %}
   </body>
 </html>

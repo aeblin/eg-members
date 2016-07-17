@@ -31,25 +31,28 @@ class StarterSite extends TimberSite {
 	}
 
 	function add_to_context( $context ) {
-		$context['foo'] = 'bar';
-		$context['stuff'] = 'I am a value set in your functions.php file';
-		$context['notes'] = 'These values are available everytime you call Timber::get_context();';
 		$context['menu'] = new TimberMenu();
 		$context['site'] = $this;
-		if (MeprUtils::is_user_logged_in()) {
-			$context['mpLoggedIn'] = true;
-			$context['mpCurrentUser'] = MeprUtils::get_currentuserinfo();
+		//Making Memberpress play nice with Timber is pretty difficult.
+		// if (MeprUtils::is_user_logged_in()) {
+		// 	$context['mpLoggedIn'] = true;
+		// 	$context['mpCurrentUser'] = MeprUtils::get_currentuserinfo();
+		// }
+		// //Does this work?
+		// $context['mpUtils'] = new MeprUtils();
+		if(is_user_logged_in()) {
+			$context['userLoggedIn'] = true;
+			$context['currentUser'] = wp_get_current_user();
+			//Add Memberful Items for easy access
+			$context['mfAccountUrl'] = memberful_account_url();
+			$context['mfAvatar'] = get_avatar(wp_get_current_user()->user_email, 48);
+			$context['mfUserName'] = wp_get_current_user()->display_name;
 		}
 		return $context;
 	}
 
-	function myfoo( $text ) {
-		$text .= ' bar!';
-		return $text;
-	}
-
 	function add_to_twig( $twig ) {
-		/* this is where you can add your own fuctions to twig */
+		/* this is where you can add your own functions to twig */
 		$twig->addExtension( new Twig_Extension_StringLoader() );
 		$twig->addFilter('myfoo', new Twig_SimpleFilter('myfoo', array($this, 'myfoo')));
 		return $twig;
@@ -58,3 +61,26 @@ class StarterSite extends TimberSite {
 }
 
 new StarterSite();
+
+//Keep non-admins from viewing admin panel
+add_action( 'init', 'blockusers_init' );
+function blockusers_init(){
+	if (is_admin() && !current_user_can('administrator') && !(defined('DOING_AJAX') && DOING_AJAX) ) {
+		wp_redirect(home_url());
+		exit;
+	}
+}
+
+add_action('after_setup_theme', 'remove_admin_bar');
+function remove_admin_bar() {
+	if (!current_user_can('administrator') && !is_admin()) {
+		show_admin_bar(false);
+	}
+}
+
+//Remove Memberful Styling?
+// function eg_members_remove_stylesheet( $current ) {
+//   return false;
+// }
+
+add_filter( 'memberful_wp_profile_widget_add_stylesheet', 'eg_members_remove_stylesheet' );
