@@ -1,0 +1,19 @@
+{% block content %}
+  <section class="recent-blog">
+    <div class="section-header--block">
+      <div class="container">
+        <h2 class="section-header--title">
+          The Licensee Wire
+        </h2>
+      </div>
+    </div>
+    {% for post in recent %}
+      <article class="teaseCover tease-{{post.post_type}} u-flexAlign u-bgFilter" id="tease-{{post.ID}}" {% if post.header_image %}style="background-image: url('{{ TimberImage(post.header_image) }}');"{% endif %}>
+        <div class="u-alignerItem u-textCenter">
+          <h1 class="tease-blog--title">{{post.title}}</h1>
+          <a class="button btn-light" href="{{post.link}}">Read More</a>
+        </div>
+      </article>
+    {% endfor %}
+  </section>
+{% endblock %}

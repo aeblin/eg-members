@@ -43,10 +43,21 @@ class StarterSite extends TimberSite {
 		if(is_user_logged_in()) {
 			$context['userLoggedIn'] = true;
 			$context['currentUser'] = wp_get_current_user();
+			$context['currentUserId'] = get_current_user_id();
+			$currentUserId = get_current_user_id();
 			//Add Memberful Items for easy access
 			$context['mfAccountUrl'] = memberful_account_url();
 			$context['mfAvatar'] = get_avatar(wp_get_current_user()->user_email, 48);
 			$context['mfUserName'] = wp_get_current_user()->display_name;
+			$context['mfFirstName'] = wp_get_current_user()->first_name;
+			$context['mfUserSubs'] = memberful_wp_user_plans_subscribed_to($currentUserId);
+			$mfUserSubs = memberful_wp_user_plans_subscribed_to($currentUserId);
+			$context['allMfSubs'] = get_option('memberful_subscriptions');
+			$allMfSubs = get_option('memberful_subscriptions');
+			$context['mfUserSubArray'] = get_current_user_mf_subs($mfUserSubs);
+			$mfUserSubArray = get_current_user_mf_subs($mfUserSubs);
+			$context['mfMatches'] = user_active_subscriptions($allMfSubs, $mfUserSubArray);
+      $context['mfMatchNames'] = user_active_subscription_names($allMfSubs, $mfUserSubArray);
 		}
 		return $context;
 	}
@@ -62,6 +73,89 @@ class StarterSite extends TimberSite {
 
 new StarterSite();
 
+//Custom Post Types
+function custom_post_type_blog() {
+  $labels = array(
+    'name'               => _x( 'Posts', 'post type general name' ),
+    'singular_name'      => _x( 'Post', 'post type singular name' ),
+    'add_new'            => _x( 'Add New', 'post' ),
+    'add_new_item'       => __( 'Add New Post' ),
+    'edit_item'          => __( 'Edit Post' ),
+    'new_item'           => __( 'New Post' ),
+    'all_items'          => __( 'All Posts' ),
+    'view_item'          => __( 'View Post' ),
+    'search_items'       => __( 'Search Posts' ),
+    'not_found'          => __( 'No posts found' ),
+    'not_found_in_trash' => __( 'No posts found in the Trash' ),
+    'parent_item_colon'  => '',
+    'menu_name'          => 'Posts'
+  );
+  $args = array(
+    'labels'        => $labels,
+    'taxonomies'    => array('category', 'post_tag'),
+    'menu_icon'     => 'dashicons-admin-post',
+    'description'   => 'Holds all blog posts and post data.',
+    'public'        => true,
+    'menu_position' => 4,
+    'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments', 'revisions', 'post-formats' ),
+    'has_archive'   => true,
+  );
+  register_post_type( 'blog', $args );
+}
+
+function custom_post_type_news() {
+  $labels = array(
+      'name' => _x('News', 'post type general name'),
+      'singular_name' => _x('News Item', 'post type singular name'),
+      'add_new' => _x('Add New', 'news'),
+      'add_new_item' => __('Add New News Item'),
+      'edit_item' => __('Edit News Item'),
+      'new_item' => __('New News Item'),
+      'view_item' => __('View News Item'),
+      'search_items' => __('Search News'),
+      'not_found' =>  __('Nothing found'),
+      'not_found_in_trash' => __('Nothing found in Trash'),
+      'parent_item_colon' => ''
+  );
+
+  $args = array(
+      'labels' => $labels,
+      'menu_icon'     => 'dashicons-microphone',
+      'description'   => 'List all Life GPS Licensee News here.',
+      'public'        => true,
+      'menu_position' => 11,
+      'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments', 'revisions', 'post-formats' ),
+      'has-archive'   => true,
+    );
+
+  register_post_type( 'news' , $args );
+}
+
+add_action( 'init', 'custom_post_type_blog' );
+add_action( 'init', 'custom_post_type_news' );
+
+
+//Admin Dash and Access Modifications //----
+
+// Remove dashboard items if user is not administrator
+function remove_dashboard_menuitems_editor(){
+  if(current_user_can('editor')){
+    remove_menu_page('edit-comments.php');
+    remove_menu_page('tools.php');
+    remove_menu_page('customize.php');
+    remove_menu_page('edit.php?post_type=acf-field-group');
+    remove_menu_page('edit.php');
+  }
+}
+
+// Remove these even if user is an administrator
+function remove_dashboard_menuitems(){
+  remove_menu_page('edit-comments.php');
+  remove_menu_page('edit.php');
+}
+
+add_action('admin_menu', 'remove_dashboard_menuitems');
+
 //Keep non-admins from viewing admin panel
 add_action( 'init', 'blockusers_init' );
 function blockusers_init(){
@@ -71,6 +165,7 @@ function blockusers_init(){
 	}
 }
 
+//Remove Admin Bar from screen unless user is admin
 add_action('after_setup_theme', 'remove_admin_bar');
 function remove_admin_bar() {
 	if (!current_user_can('administrator') && !is_admin()) {
@@ -78,9 +173,65 @@ function remove_admin_bar() {
 	}
 }
 
-//Remove Memberful Styling?
-// function eg_members_remove_stylesheet( $current ) {
-//   return false;
-// }
+//Memberful-Related Functions //----
 
+//Remove Memberful Styling for Profile Widget?
+function eg_members_remove_stylesheet( $current ) {
+  return false;
+}
 add_filter( 'memberful_wp_profile_widget_add_stylesheet', 'eg_members_remove_stylesheet' );
+
+//Functions to help expose Memberful values to Timber
+if(is_user_logged_in()) {
+  $allMfSubs = get_option('memberful_subscriptions'); //Array of all subs
+  $currentUserId = get_current_user_id(); //Current User ID
+  $currentUserSubArray = memberful_wp_user_plans_subscribed_to($currentUserId); //Array of IDs of Active Subs
+  $userIdArray = get_current_user_mf_subs($currentUserSubArray);
+}
+
+function get_current_user_mf_subs($currentUserSubArray) {
+  if(is_user_logged_in()){
+    $idArray = array();
+    if (is_array($currentUserSubArray)) {
+      foreach($currentUserSubArray as $row) {
+        $idArray[] = $row['id'];
+      }
+    }
+    return $idArray;
+  }
+}
+
+function user_active_subscriptions($allMfSubs, $userIdArray) {
+  if(is_user_logged_in()){
+    // i create an empty array. if the user has no active subscriptions, the
+    // function will return an empty array/no subscriptions
+    $activeSubscriptions = array();
+    // i loop through the subscription ids
+    foreach($userIdArray as $subscriptionId) {
+      // if the subscriptionId isn't found in $allMfSubs, the
+      // $subscription variable will have the value of null
+      $subscription = $allMfSubs[$subscriptionId];
+      // an if statement will treat null and false the same way.
+      // if the $subscription is true/not null, add it to the array of
+      // active subscriptions
+      if($subscription) {
+        $activeSubscriptions[] = $subscription;
+      }
+    }
+    // return whatever you've found
+    return $activeSubscriptions;
+  }
+}
+
+function user_active_subscription_names($allMfSubs, $userIdArray) {
+  if(is_user_logged_in()){
+    $activeSubscriptionNames = array();
+    foreach($userIdArray as $subscriptionId) {
+      $subscription = $allMfSubs[$subscriptionId];
+      if($subscription) {
+        $activeSubscriptionNames[] = $subscription["name"];
+      }
+    }
+    return $activeSubscriptionNames;
+  }
+}

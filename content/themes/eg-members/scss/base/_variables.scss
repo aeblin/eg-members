@@ -1,26 +1,28 @@
 // Color Variables //-------
-$color-primary: rgb(241,103,36);
+$color-primary: rgb(241,103,36); // Life GPS Orange
+$color-secondary: rgb(240,86,61); // Life GPS Light Orange
+
 $color-primary--hover: lighten($color-primary, 10%);
 $color-primary--active: lighten($color-primary, 15%);
-$color-secondary: rgb(240,86,61);
+
 $color-background: rgb(255,255,255);
 $color-white: rgb(255,255,255);
 
 $color-gray-lightish: rgb(153,153,153);
 $color-gray-lightish--hover: darken($color-gray-lightish, 10%);
 $color-gray-lightish--active: darken($color-gray-lightish, 15%);
-$color-gray-default: rgb(67, 66, 68);
+$color-gray-default: rgb(67,66,68);
 
-$color-dark-navy: rgb(0, 42, 72);
-$color-superdark-navy: rgb(0,28,45);
+$color-dark: rgb(47,46,48);
+$color-superdark: rgb(27,26,28);
 
-$color-accent-blue: rgb(0, 132, 221);
+$color-accent: $color-secondary;
 
 $color-input-bluefaded: rgba(0,132,221,.35);
 $color-input-blue: rgba(0,132,221,.5);
 $color-input-blueFocus: rgba(0,132,221,.7);
 
-$color-text: rgb(60,60,60);
+$color-text: $color-dark;
 $color-text-light: $color-gray-lightish;
 
 $boxShadow-dark-default: .35;
@@ -31,11 +33,11 @@ $page--topMargin: 8em;
 $border-radius--base: 4px;
 
 // Typographic Variables //-------
-$fontFamily--tungsten: "Tungsten A", "Tungsten B", sans-serif;
-$fontFamily--gotham: "Gotham SSm A", "Gotham SSm B", "Avenir-Book", sans-serif;
-$fontFamily--verlag: "Verlag A", "Verlag B", sans-serif;
-$fontFamily--surveyor: 'Surveyor SSm A', 'Surveyor SSm B', serif;
-$fontFamily--fallback: "Georgia", "Times New Roman", serif;
+$fontFamily--verlag: "Verlag A", "Verlag B", sans-serif; // Primary
+$fontFamily--surveyor: 'Surveyor SSm A', 'Surveyor SSm B', serif; // Secondary
+$fontFamily--tungsten: "Tungsten A", "Tungsten B", sans-serif; // EG Brand
+$fontFamily--gotham: "Gotham SSm A", "Gotham SSm B", "Avenir-Book", sans-serif; // EG Primary
+$fontFamily--fallback: "Georgia", "Times New Roman", serif; // Fallback
 
 $fontWeight--200: 200;
 $fontWeight--300: 300;

@@ -1,0 +1,259 @@
+.header-primary {
+  @include transition(background .25s, border-bottom .25s);
+  background: $color-superdark;
+  border-bottom: 1px solid $color-accent;
+  height: 100px;
+  left: 0;
+  top: 0;
+  position: relative;
+  width: 100%;
+  @extend .z-index--6;
+  @media screen and (max-width: $screen-sm-max) {
+    border-bottom: 0px!important;
+    height: 50px;
+    position: fixed!important;
+    z-index: 7;
+  }
+}
+
+body.is-scrolling {
+  .header-primary {
+    background: $color-superdark;
+    border-bottom: 1px solid $color-accent;
+  }
+}
+
+// Branding //-----
+.logo {
+  cursor: pointer;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+  float: left;
+  @extend .z-index--6;
+}
+.navbar-mark {
+  cursor: pointer;
+  margin: 12.5px auto;
+  width: 75px;
+  height: 75px;
+  @media screen and (max-width: $screen-sm-max){
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 40px;
+    height: 40px;
+  }
+}
+.mobileNav-mark {
+  width: 48px;
+  height: 48px;
+}
+.navbar-logotype {
+  cursor: pointer;
+  margin-top: 17.5px;
+  margin-bottom: 17.5px;
+  width: 120px;
+  height: 35px;
+}
+.mobileNav-logotype {
+  margin-top: 7px;
+  width: 120px;
+  height: 35px;
+}
+@media screen and (max-width: $screen-sm-max){
+  .navbar-logotype {
+    display: none;
+  }
+}
+
+// Navigation //-----
+.nav-primary {
+  @include horizontal-list(false);
+  float: right;
+}
+.nav-primary li {
+  position: relative;
+  padding: 42px 20px;
+  &:last-child {
+    padding: 42px 0 42px 20px;
+  }
+}
+.nav-primary li > a {
+  @include transition(color .3s ease-in-out);
+  color: rgb(255,255,255);
+  display: block;
+  position: relative;
+  font-family: $fontFamily--verlag;
+  font-size: 16px;
+  padding: 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  &:after {
+    background: none repeat scroll 0 0 rgb(255,255,255);
+    content: " ";
+    height: 1px;
+    border-bottom: 1px solid $color-accent;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    -webkit-transition: height 0.3s,opacity 0.3s,-webkit-transform 0.3s;
+    -moz-transition: height 0.3s,opacity 0.3s,-moz-transform 0.3s;
+    transition: height 0.3s,opacity 0.3s,transform 0.3s;
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+  &:hover {
+    color: $color-accent;
+    &:after {
+      height: 1px;
+      opacity: 1;
+      transform: translateY(5px);
+    }
+  }
+}
+
+.js-wrap {
+  @include transition(transform .5s ease-in-out);
+  position: relative;
+}
+
+
+// Mobile Nav //-----
+body.is-open {
+  // Slide Page Over
+  .js-wrap {
+    @include transform(translateX(-85%));
+    position: relative;
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    backface-visibility: hidden;
+    perspective: 1000;
+  }
+  // Make Nav Visible
+  .mobileNav {
+    @include transform(translateX(0));
+    visibility: visible;
+  }
+  // Cloak BG
+  .mobileNav--cloak {
+    background-color: $color-primary;
+    height: 100%;
+    opacity: .8;
+  }
+}
+
+// Mobile Nav
+.mobileNav {
+  @include transition(transform .5s);
+  @include transition(visibility .5s);
+  @include box-shadow(0 0 10px rgba(0,0,0,.25));
+  visibility: hidden;
+  background: $color-dark;
+  height: 100%;
+  width: 85%;
+  overflow-y: scroll;
+  position: fixed;
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  backface-visibility: hidden;
+  perspective: 1000;
+  right: 0;
+  top: 0;
+}
+.mobileNav > ul {
+  margin: 0 0 20px 0;
+  padding: 20px;
+  text-align: left;
+}
+.mobileNav > ul > li {
+  font-size: 1.25em;
+  font-weight: 600;
+  margin: .5em 0 1em 0;
+  padding: 0;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+.mobileNav > ul > li > a {
+  color: rgb(255,255,255);
+  display: block;
+  margin-bottom: .75em;
+  &:hover {
+    @include transition(color .25s);
+    color: darken($color-accent, 10%);
+  }
+}
+
+// Mobile Nav Sub-Menus
+.mobileNav > ul > li > ul {
+  padding: 0;
+}
+.mobileNav > ul > li > ul > li {
+  margin-bottom: 0;
+  padding: 0;
+  &:first-child {
+    margin-top: .125em;
+  }
+}
+.mobileNav > ul > li > ul > li > a {
+  font-size: .75em;
+  font-weight: 400;
+}
+
+.mobileNav--cloak {
+  @include transition(opacity .5s);
+  background: rgb(255,255,255);
+  height: 0;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  @extend .z-index--7;
+}
+
+.mobileNav--trigger {
+  @include border-radius(2px);
+  @include transition(color .25s);
+  background: rgba(255,255,255,.95);
+  border: 1px solid #ddd;
+  color: $color-text;
+  display: none;
+  float: right;
+  font-size: 1.5em;
+  margin: 7.5px 0;
+  padding: 5px;
+  width: 33px;
+  height: 33px;
+  text-align: center;
+  @extend .z-index--8;
+  &:hover {
+    color: $color-primary;
+  }
+  @media screen and (max-width: $screen-md-min) {
+    display: block;
+  }
+}
+
+.mobileNav--close {
+  @include transition(color .25s);
+  color: #fff;
+  cursor: pointer;
+  float: right;
+  font-size: 2em;
+  margin-top: 7px;
+  &:hover {
+    color: $color-accent;
+  }
+}
+
+// JS Styles
+.js-header-nav-offset {
+  margin-top: 46px;
+}

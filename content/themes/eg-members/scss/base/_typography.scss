@@ -1,7 +1,7 @@
 // Font Scale // ------
 html {
   font-size: 14px;
-  color: $color-dark-navy;
+  color: $color-primary;
 }
 @media (max-width: $screen-md-max) {
   html { font-size: 13px; }
@@ -12,6 +12,8 @@ html {
 
 body {
   line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
 }
 
 // Font Mixins // ------
@@ -82,7 +84,11 @@ body {
   font-style: normal;
   font-weight: $fontWeight--500;
 }
-
+@mixin surveyor-n7 {
+  font-family: $fontFamily--surveyor;
+  font-style: normal;
+  font-weight: $fontWeight--700;
+}
 @mixin verlag-n3 {
   font-family: $fontFamily--verlag;
   font-style: normal;
@@ -109,6 +115,111 @@ body {
   font-weight: $fontWeight--700;
 }
 @mixin verlag-i7 {
+  font-family: $fontFamily--verlag;
+  font-style: italic;
+  font-weight: $fontWeight--700;
+}
+
+// Font Classes // -----
+// Font Mixins // ------
+.tungsten-n2 {
+  font-family: $fontFamily--tungsten;
+  font-style: normal;
+  font-weight: $fontWeight--200;
+}
+.tungsten-n3 {
+  font-family: $fontFamily--tungsten;
+  font-style: normal;
+  font-weight: $fontWeight--300;
+}
+.tungsten-n4 {
+  font-family: $fontFamily--tungsten;
+  font-style: normal;
+  font-weight: $fontWeight--400;
+}
+.tungsten-n5 {
+  font-family: $fontFamily--tungsten;
+  font-style: normal;
+  font-weight: $fontWeight--500;
+}
+.tungsten-n6 {
+  font-family: $fontFamily--tungsten;
+  font-style: normal;
+  font-weight: $fontWeight--600;
+}
+
+.gotham-n2 {
+  font-family: $fontFamily--gotham;
+  font-style: normal;
+  font-weight: $fontWeight--200;
+}
+.gotham-n3 {
+  font-family: $fontFamily--gotham;
+  font-style: normal;
+  font-weight: $fontWeight--300;
+}
+.gotham-n4 {
+  font-family: $fontFamily--gotham;
+  font-style: normal;
+  font-weight: $fontWeight--400;
+}
+.gotham-i4 {
+  font-family: $fontFamily--gotham;
+  font-style: italic;
+  font-weight: $fontWeight--400;
+}
+.gotham-n7 {
+  font-family: $fontFamily--gotham;
+  font-style: normal;
+  font-weight: $fontWeight--700;
+}
+.gotham-i7 {
+  font-family: $fontFamily--gotham;
+  font-style: italic;
+  font-weight: $fontWeight--700;
+}
+
+.surveyor-n3 {
+  font-family: $fontFamily--surveyor;
+  font-style: normal;
+  font-weight: $fontWeight--300;
+}
+.surveyor-n5 {
+  font-family: $fontFamily--surveyor;
+  font-style: normal;
+  font-weight: $fontWeight--500;
+}
+.surveyor-n7 {
+  font-family: $fontFamily--surveyor;
+  font-style: normal;
+  font-weight: $fontWeight--700;
+}
+.verlag-n3 {
+  font-family: $fontFamily--verlag;
+  font-style: normal;
+  font-weight: $fontWeight--300;
+}
+.verlag-i3 {
+  font-family: $fontFamily--verlag;
+  font-style: italic;
+  font-weight: $fontWeight--300;
+}
+.verlag-n4 {
+  font-family: $fontFamily--verlag;
+  font-style: normal;
+  font-weight: $fontWeight--400;
+}
+.verlag-i4 {
+  font-family: $fontFamily--verlag;
+  font-style: italic;
+  font-weight: $fontWeight--400;
+}
+.verlag-n7 {
+  font-family: $fontFamily--verlag;
+  font-style: normal;
+  font-weight: $fontWeight--700;
+}
+.verlag-i7 {
   font-family: $fontFamily--verlag;
   font-style: italic;
   font-weight: $fontWeight--700;
@@ -186,9 +297,9 @@ a {
 
 a.link{
   @include transition(color .25s);
-  color: $color-dark-navy;
+  color: $color-primary;
   &:hover {
-    color: $color-accent-blue;
+    color: $color-accent;
   }
 }
 
@@ -220,7 +331,7 @@ p {
   }
   a:hover {
     text-decoration: none;
-    color: $color-dark-navy;
+    color: $color-primary;
     background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,42,72,0.6) 50%);
     background-repeat: repeat-x;
     background-size: 2px 2px;
@@ -239,7 +350,7 @@ p {
     }
     a:hover {
       text-decoration: none;
-      color: $color-dark-navy;
+      color: $color-primary;
       background: linear-gradient(to bottom, rgba(0,0,0,0) 75%, rgba(0,42,72,0.8) 75%);
       background-repeat: repeat-x;
       background-size: 2px 2px;
@@ -274,12 +385,11 @@ h4 {
 
 // Specific Classes //----
 .sectionHeader {
-  @include tungsten-n3;
-  font-size: 4em; //TODO AE: Come back to this.
-  letter-spacing: $fontLetterSpacing--condensed;
+  @include surveyor-n5;
+  font-size: 2em; //TODO AE: Come back to this.
+  letter-spacing: 0.15rem;
   text-transform: uppercase;
-  color: $color-dark-navy;
-  margin-bottom: 15px;
+  color: $color-gray-default;
 }
 
 .ul-bulleted {

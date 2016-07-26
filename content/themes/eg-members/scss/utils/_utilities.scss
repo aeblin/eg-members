@@ -1,8 +1,48 @@
-.u-clearfix {
-  @include clearfix
+// Typography Utils // ------
+.u-letterSpacing2{
+  letter-spacing: 0.2rem;
+}
+.u-letterSpacing3 {
+  letter-spacing: 0.3rem;
+}
+.u-letterSpacing4 {
+  letter-spacing: 0.4rem;
+}
+.u-letterSpacing5 {
+  letter-spacing: 0.5rem;
+}
+.u-lightCopy {
+  color: rgb(255,255,255);
+}
+.u-capitalize {
+  text-transform: uppercase;
+}
+
+// Text Align // ------
+.u-textLeft {
+  text-align: left;
+}
+.u-textRight {
+  text-align: right;
+}
+.u-textCenter {
+  text-align: center;
+}
+@media screen and (max-width: $screen-sm-max){
+  .u-textLeft, .u-textRight, .u-textCenter{
+    text-align: center;
+  }
+}
+.u-textMdCenter {
+  @media (min-width: $screen-md-min) {
+    text-align: center;
+  }
 }
 
 // Clears //----
+.u-clearfix {
+  @include clearfix
+}
 @media screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
   .u-clear-after--lg-3>*:nth-child(2n+1) {
     clear: left;
@@ -15,57 +55,111 @@
 }
 
 // Margins //----
-.u-clearBootstrap {
+.u-clearBootstrapMargins {
   margin-right: -15px;
   margin-left: -15px;
 }
 
-.u-noMargin {
-  margin: 0!important;
-}
-
-.u-marginTop20 {
-  margin-top: 20px;
-}
-
-.u-marginTop2em {
-  margin-top: 2em;
-}
-
-.u-marginTop4em {
-  margin-top: 4em;
-}
-
-.u-marginTop-2em {
-  margin-top: -2em;
-}
-
-.u-marginBottom-4em {
-  margin-bottom: -4em;
-}
-
-.u-marginBottom2em {
-  margin-bottom: 2em;
-}
-
-.u-marginBottom2Halfem {
-  margin-bottom: 2.5em;
-}
-// Padding //----
+// Padding Classes // ------
 .u-noPaddingLeft {
   padding-left: 0px;
   @media screen and (max-width: $screen-sm-max){
     padding-left: 15px;
   }
 }
-
 .u-noPaddingRight {
   padding-right: 0px;
   @media screen and (max-width: $screen-sm-max){
     padding-right: 15px;
   }
 }
+.u-noPadding--x {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.u-padding--1 {
+  padding: 5px;
+}
+.u-padding--2 {
+  padding: 10px;
+}
+.u-padding--3 {
+  padding: 15px;
+}
+.u-padding--4 {
+  padding: 30px;
+}
+.u-padding--5 {
+  padding: 50px;
+}
+.u-padding--6 {
+  padding: 70px;
+}
+.u-padding--7 {
+  padding: 100px;
+}
 
+// Padding Left/Right // ---
+.u-padding--1x {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.u-padding--2x {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.u-padding--3x {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.u-padding--4x {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.u-padding--5x {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.u-padding--6x {
+  padding-left: 70px;
+  padding-right: 70px;
+}
+.u-padding--7x {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+// Padding Top Bottom // ---
+.u-padding--1y {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.u-padding--2y {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.u-padding--3y {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.u-padding--4y {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.u-padding--5y {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.u-padding--6y {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+.u-padding--7y {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+// Additional Utilities //----
 .u-gpuAccelerate {
   @include transform(translate3d(0,0,0));
 }
@@ -73,13 +167,17 @@
 .u-positionStatic {
   position: static;
 }
-
 .u-positionRelative {
   position: relative;
 }
-
 .u-verticalAlign {
   @include vertical-align;
+}
+.u-flexAlign{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
 }
 
 .u-floatLeft {
@@ -97,30 +195,8 @@ li.break:last-child {
 .u-textShadow {
   @include text-shadow(1px 1px 1px rgba(0,0,0,.05));
 }
-
 .u-textShadowLight {
   @include text-shadow(1px 1px 1px rgba(255,255,255,.05));
-}
-
-.u-textLeft {
-  text-align: left;
-}
-.u-textRight {
-  text-align: right;
-}
-.u-textCenter {
-  text-align: center;
-}
-@media screen and (max-width: $screen-sm-max){
-  .u-textLeft, .u-textRight, .u-textCenter{
-    text-align: center;
-  }
-}
-
-.u-textMdCenter {
-  @media (min-width: $screen-md-min) {
-    text-align: center;
-  }
 }
 
 .u-blockLinkHack {
@@ -133,17 +209,18 @@ li.break:last-child {
   z-index: 10;
 }
 
-// Background Related // ----------
+// Background Filters // ------
 .u-bgFilter {
   &:before {
     position: absolute;
     content:" ";
     top: 0;
+    right: 0;
+    bottom: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0;
-    background-color: rgba(20,35,40,0.15);
+    background-image: linear-gradient(-180deg, rgba(253,247,235,0.20) 0%, rgba(241,103,35,0.50) 100%);
   }
 }
 .u-bgFilterMid {
@@ -165,47 +242,16 @@ li.break:last-child {
   }
 }
 
-.u-bgFilterBlue {
-  @extend .u-bgFilter;
-  &:before {
-    background-color: rgba(39,97,142,0.65);
-  }
-}
-.u-bgFilterBlueDark {
-  @extend .u-bgFilter;
-  &:before {
-    background-color: rgba(39,97,142,0.75);
-  }
-}
-.u-bgFilterBlueDark--sm {
-  @include transition(all, .25s);
-  @media screen and (max-width: $screen-sm-max){
-    &:before {
-      position: absolute;
-      content:" ";
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      background-color: rgba(39,97,142,0.75);
-    }
-  }
-}
-
-
 .u-backgroundCover {
   background: no-repeat;
   background-position: center center;
   background-size: cover;
 }
-
 .u-backgroundContain {
   background: no-repeat;
   background-position: center center;
   background-size: contain;
 }
-
 .u-rightContain {
   background-position: right;
   background-size: contain;
@@ -228,7 +274,6 @@ li.break:last-child {
   justify-content: center;
   height: auto;
 }
-
 .u-alignerMd {
   @media screen and (min-width: $screen-md-min) {
     display: -webkit-box;
@@ -246,7 +291,6 @@ li.break:last-child {
     height: auto;
   }
 }
-
 .u-alignerItemFixed {
   -webkit-box-flex: 0;
   -webkit-flex: none;
@@ -254,7 +298,6 @@ li.break:last-child {
   flex: none;
   max-width: 50%;
 }
-
 .u-alignerItem {
   -webkit-box-flex: 1;
   -webkit-flex: 1;

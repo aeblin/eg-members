@@ -19,7 +19,14 @@ if ( ! class_exists( 'Timber' ) ) {
 }
 $context = Timber::get_context();
 $context['posts'] = Timber::get_posts();
-$context['foo'] = 'bar';
+$context['recent'] = Timber::get_posts( array('post_type' => 'blog', 'posts_per_page' => 4));
+$newsArgs = array ('post_type' => 'news',
+                   'posts_per_page' => 3,
+                   'orderby'   => 'date',
+                   'order'     => 'ASC'
+                  );
+$context['news'] = Timber::get_posts($newsArgs);
+
 $templates = array( 'index.twig' );
 if ( is_home() ) {
 	array_unshift( $templates, 'home.twig' );

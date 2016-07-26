@@ -1,0 +1,14 @@
+{% extends "base.twig" %}
+
+{% block content %}
+  <section class="account">
+    {% if (userLoggedIn == true) %}
+      <div class="container">
+        <h2>What's up, {{mfUserName}}</h2>
+        {% filter shortcodes %}
+          [memberful_account_link]Account[/memberful_account_link]
+        {% endfilter %}
+      </div>
+    {% endif %}
+  </section>
+{% endblock %}

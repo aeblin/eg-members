@@ -2,24 +2,13 @@
 
 {% block content %}
     <main class="layoutMain">
-      <div class="homepage-hero-module">
-        <div class="filter"></div>
-        <div class="flex-container">
-          {% if (userLoggedIn == true) %}
-            {% include "account.twig" %}
-          {% else %}
-            {% include "signin.twig" %}
-          {% endif %}
-        </div>
-        {% if (userLoggedIn == false) %}
-          <video autoplay loop class="fullscreen">
-            <source src="{{site.theme.link}}/video/sunset-lapse.webm" type="video/webm" />Your browser does not support the video tag. Consider upgrading your browser.
-            <source src="{{site.theme.link}}/video/sunset-lapse.mp4" type="video/mp4" />Your browser does not support the video tag. Consider upgrading your browser.
-          </video>
-        {% endif %}
-        <div class="poster hidden">
-          {# <img src="PATH_TO_JPEG" alt=""> #}
-        </div>
-      </div>
+      {% if (userLoggedIn == true) %}
+        {% include "userpanel.twig" %}
+        {% include "tease-blog.twig" %}
+        {% include "resources.twig" %}
+      {% else %}
+        {% include "signin.twig" %}
+      {% endif %}
+      {{httpReferer}}
     </main>
 {% endblock %}

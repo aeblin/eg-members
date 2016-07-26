@@ -1,0 +1,30 @@
+.card {
+  @include verlag-n4;
+  background: rgba(255,255,255,1);
+  @include box-shadow(0px 2px 4px 0px rgba(0,0,0,0.50));
+  box-sizing: border-box;
+}
+.card.orange-border {
+  border-width: 10px 0 0 0;
+  border-style: solid;
+  border-color: #F1673D;
+  border-image: linear-gradient(-165deg, #F9A070 2%, #F6885A 44%, #F6885A 44%, #F68759 46%, #F1673D 100%) 1 stretch;
+}
+.card.news-snippet {
+  font-size: 18px;
+  text-align: right;
+  padding: 0 10px;
+  margin-bottom: 1em;
+}
+.card.news-snippet .date {
+  display: block;
+  @include verlag-n7;
+  color: $color-primary;
+  font-size: 0.75em;
+  padding: 1em 0;
+}
+.card.news-snippet .excerpt {
+  display: block;
+  @include verlag-n4;
+  padding: 0 0 1em 0;
+}

@@ -1,0 +1,33 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+  <section class="container-fluid blogPosts" role="content">
+
+    <div class="row postArchive">
+      <div class="col-lg-8 col-lg-offset-2">
+        {% for post in posts %}
+          {% include 'preview-blog.twig' %}
+        {% endfor %}
+      </div>
+    </div>
+
+    {% if pagination %}
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="article--pagination">
+            {% if pagination.prev %}
+              <a href="{{ pagination.prev.link }}" class="prev button button--default pull-left">&laquo; Previous Page</a>
+            {% endif %}
+
+            {% if pagination.next %}
+              <a href="{{ pagination.next.link }}" class="next button button--default pull-right">Next Page &raquo;</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+  </section>
+
+{% endblock %}

@@ -1,0 +1,8 @@
+{% block content %}
+  <div class="card news-snippet orange-border">
+    {# <a href="{{ post.link }}" class="" > #}
+      <date class="date u-textRight">{{ post.post_date|date }}</date>
+      <p class="excerpt u-textRight">{{ post.get_preview(25, true, '') }}</p>
+    {# </a> #}
+  </div>
+{% endblock %}

@@ -7,16 +7,14 @@ html {
 }
 
 body {
-  @include gotham-n3;
+  @include verlag-n3;
   background: $color-background;
   position: relative;
-  -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased;
 }
 
 hr {
   border: none;
-  border-top: 1px solid $color-dark-navy;
+  border-top: 1px solid $color-primary;
   margin: 15px auto;
   width: 90%;
 }

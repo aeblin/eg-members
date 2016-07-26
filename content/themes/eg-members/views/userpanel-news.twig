@@ -1,0 +1,12 @@
+{% block content %}
+  <div class="account--news col-md-6">
+    <h2 class="sectionHeader u-textRight u-padding--3y">Latest Updates</h2>
+    <div class="row">
+      <div class="col-sm-offset-2 col-sm-10">
+        {% for post in news %}
+          {% include ['news-snippet.twig'] %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}
