@@ -61,6 +61,8 @@ class Twig {
 		$twig->addFilter(new \Twig_SimpleFilter('wpautop', 'wpautop'));
 		$twig->addFilter(new \Twig_SimpleFilter('list', array($this, 'add_list_separators')));
 
+		$twig->addFilter(new \Twig_SimpleFilter('pluck', array('Timber\Helper', 'pluck')));
+
 		$twig->addFilter(new \Twig_SimpleFilter('relative', function( $link ) {
 					return URLHelper::get_rel_url($link, true);
 				} ));
@@ -217,12 +219,20 @@ class Twig {
 	 */
 	public function add_timber_escapers( $twig ) {
 
-		$twig->getExtension( 'core' )->setEscaper( 'esc_url', function( \Twig_Environment $env, $string ) {
+		$twig->getExtension('core')->setEscaper('esc_url', function( \Twig_Environment $env, $string ) {
 			return esc_url( $string );
-		} );
-		$twig->getExtension( 'core' )->setEscaper( 'wp_kses_post', function( \Twig_Environment $env, $string ) {
+		});
+		$twig->getExtension('core')->setEscaper('wp_kses_post', function( \Twig_Environment $env, $string ) {
 			return wp_kses_post( $string );
-		} );
+		});
+
+		$twig->getExtension('core')->setEscaper('esc_html', function( \Twig_Environment $env, $string ) {
+			return esc_html( $string );
+		});
+
+		$twig->getExtension('core')->setEscaper('esc_js', function( \Twig_Environment $env, $string ) {
+			return esc_js( $string );
+		});
 
 		return $twig;
 

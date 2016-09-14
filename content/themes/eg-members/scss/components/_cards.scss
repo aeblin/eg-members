@@ -8,8 +8,9 @@
   border-width: 10px 0 0 0;
   border-style: solid;
   border-color: #F1673D;
-  border-image: linear-gradient(-165deg, #F9A070 2%, #F6885A 44%, #F6885A 44%, #F68759 46%, #F1673D 100%) 1 stretch;
+  border-image: linear-gradient(165deg, #F9A070 2%, #F6885A 44%, #F6885A 44%, #F68759 46%, #F1673D 100%) 1 stretch;
 }
+//For News Cards
 .card.news-snippet {
   font-size: 18px;
   text-align: right;
@@ -27,4 +28,31 @@
   display: block;
   @include verlag-n4;
   padding: 0 0 1em 0;
+}
+
+//For Resource Squares on Homepage
+.card.resource-square {
+  position: relative;
+  height: 18vw;
+  min-height: 250px;
+  margin-top: -3%;
+  background-size: cover;
+  @media screen and (max-width: $screen-sm-max) {
+    margin-bottom: 13%;
+  }
+}
+.card.resource-square .title {
+  @include verlag-n7;
+  position: relative;
+  color: $color-primary;
+  background: radial-gradient(circle farthest-side at left top, #F9A070 25%, #F6885A 80%, #F1673D 98%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.125rem;
+}
+//For Resource Cards on Resource Pages
+.card.resource-card {
+  background-size: cover;
 }

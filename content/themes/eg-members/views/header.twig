@@ -1,47 +1,59 @@
 <header class="js-header-nav js-header-nav-scroll hidden-xs hidden-sm header-primary {% if (post.header_type == 'Cover') or (isServices and options.services_header_image) or (isProducts and options.products_header_image) or (isCoaches and options.coaches_header_image) or (isHome) or (is404) %}header-transparent{% endif %}">
   <div class="container">
-    <div class="row">
-      <div class="col-xs-9 col-md-3 col-lg-3">
+    <div class="u-flexAlign">
+      <div class="brand">
         <a href="/">
           <span class="logo navbar-mark" style="background-image: url({{site.theme.link}}/img/LifeGPS-CertifiedOutline-White.svg);">Life GPS Certified</span>
+          <span class="logo navbar-logotype" style="background-image: url({{site.theme.link}}/img/memberarea.svg);">Member Area</span>
         </a>
       </div>
-
-      <nav class="col-md-9 col-lg-9" role="navigation">
-        <ul class="nav-primary">
-
-          {% for item in menu.items %}
-            <li id="menu-item-{{item.ID}}" class="menu-item menu-item-type-{{item.type}} menu-item-object-{{item.object}} menu-item-{{item.ID}}">
-              <a href="{{item.link}}">{{item.title}}</a>
-
-              {# Just in case you want to enable dropdown/submenus #}
-              {% if item.get_children %}
-                <div class="submenu">
-                  <div class="submenu-inner">
-                    <div class="container-fluid">
-
-                      <ul class="list-plain">
-                        {% for child in item.get_children %}
-                          <li class="nav-drop-item menu-{{ child.title|replace(' ', '-')|lower }}"><a href="{{child.get_link}}">{{child.title}}</a></li>
-                        {% endfor %}
-                      </ul>
-
-                    </div>
-                  </div>
-                </div>
-              {% endif %}
-
-            </li>
-          {% endfor %}
-
-        </ul>
-      </nav>
-
-      <div class="col-xs-3 col-sm-0 col-md-0 col-lg-0 hidden-md hidden-lg">
-        <a href="#" class="js-mobileNav--trigger mobileNav--trigger"><i class="fa fa-bars"></i></a>
+      <div class="nav-container">
+        <a class="nav-user-icon nav-element" href="{{mfAccountUrl}}">
+          <i class="ion-ios-person-outline"></i>
+        </a>
+        <div class="js-nav-submenu-toggle nav-submenu-toggle nav-element">
+          <div class="line-wrapper">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+  <section class="js-nav-submenu nav-sub-menu">
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-12 col-lg-12" role="navigation">
+          <ul class="nav-primary u-flexAlign">
+
+            {% for item in menu.items %}
+              <li id="menu-item-{{item.ID}}" class="menu-item menu-item-type-{{item.type}} menu-item-object-{{item.object}} menu-item-{{item.ID}}">
+                <a href="{{item.link}}">{{item.title}}</a>
+
+                {# Just in case you want to enable dropdown/submenus #}
+                {% if item.get_children %}
+                  <div class="submenu">
+                    <div class="submenu-inner">
+                      <div class="container-fluid">
+
+                        <ul class="list-plain">
+                          {% for child in item.get_children %}
+                            <li class="nav-drop-item menu-{{ child.title|replace(' ', '-')|lower }}"><a href="{{child.get_link}}">{{child.title}}</a></li>
+                          {% endfor %}
+                        </ul>
+
+                      </div>
+                    </div>
+                  </div>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </section>
 </header>
 
 <header class="js-header-nav hidden-md hidden-lg header-primary {% if (post.header_type == 'Cover') or (isServices and options.services_header_image) or (isProducts and options.products_header_image) or (isCoaches and options.coaches_header_image) or (isHome) or (is404) %}header-transparent{% endif %}">

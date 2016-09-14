@@ -28,8 +28,9 @@
 
 // @import "layout/layout";
 // @import "layout/grid";
+@import "layout/footer";
+@import "layout/main";
 @import "layout/navbar";
-// @import "layout/footer";
 // @import "layout/forms";
 // @import "layout/logos";
 // @import "layout/newsletter-signup";
@@ -38,10 +39,12 @@
 @import "components/buttons";
 @import "components/cards";
 // @import "components/hero";
+@import "components/headers";
 @import "components/inputs";
 // @import "components/jumbotron";
 // @import "components/metabar";
 // @import "components/posts";
+@import "components/resources";
 @import "components/sections";
 @import "components/signin";
 @import "components/teases";

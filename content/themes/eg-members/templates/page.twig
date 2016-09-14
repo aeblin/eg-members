@@ -1,14 +1,21 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<div class="content-wrapper">
-		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
-			<section class="article-content">
-				<h1 class="article-h1">{{post.title}}</h1>
-				<div class="article-body">
-					{{post.content}}
-				</div>
-			</section>
-		</article>
-	</div><!-- /content-wrapper -->
+
+	{% include ["header-"~post.header_type|lower~".twig", "header-default.twig"] %}
+
+	<section class="content-wrapper">
+		<div class="container">
+			<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+				<section class="article-content">
+					{% if header_type == 'default' %}
+						<h1 class="article-h1">{{post.title}}</h1>
+					{% endif %}
+					<section class="resource-section">
+						{{post.content}}
+					</section>
+				</section>
+			</article>
+		</div>
+	</section><!-- /content-wrapper -->
 {% endblock %}

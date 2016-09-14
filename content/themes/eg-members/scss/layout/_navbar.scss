@@ -2,17 +2,16 @@
   @include transition(background .25s, border-bottom .25s);
   background: $color-superdark;
   border-bottom: 1px solid $color-accent;
-  height: 100px;
   left: 0;
   top: 0;
   position: relative;
   width: 100%;
-  @extend .z-index--6;
+  @extend .z-index--10;
   @media screen and (max-width: $screen-sm-max) {
     border-bottom: 0px!important;
     height: 50px;
     position: fixed!important;
-    z-index: 7;
+    z-index: 10;
   }
 }
 
@@ -24,6 +23,16 @@ body.is-scrolling {
 }
 
 // Branding //-----
+.brand {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -moz-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
 .logo {
   cursor: pointer;
   background-size: 100%;
@@ -35,6 +44,26 @@ body.is-scrolling {
   border: 0;
   float: left;
   @extend .z-index--6;
+}
+
+.nav-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+}
+.nav-element {
+  margin: 0 25px 0 0;
+  &:last-child {
+    margin: 0 0 0 0;
+  }
 }
 .navbar-mark {
   cursor: pointer;
@@ -48,16 +77,15 @@ body.is-scrolling {
     height: 40px;
   }
 }
+.navbar-logotype {
+  cursor: pointer;
+  margin: 40px 15px;
+  width: 160px;
+  height: 16px;
+}
 .mobileNav-mark {
   width: 48px;
   height: 48px;
-}
-.navbar-logotype {
-  cursor: pointer;
-  margin-top: 17.5px;
-  margin-bottom: 17.5px;
-  width: 120px;
-  height: 35px;
 }
 .mobileNav-logotype {
   margin-top: 7px;
@@ -70,33 +98,100 @@ body.is-scrolling {
   }
 }
 
+// Nav Usericon
+.nav-user-icon {
+  @include transition(all 0.25s ease);
+  color: rgb(255,255,255);
+  display: inline-block;
+  font-size: 36px;
+}
+.nav-user-icon:hover{
+  color: $color-accent;
+}
+
+// Nav-Submenu Toggle
+.nav-submenu-toggle {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+}
+.line-wrapper {
+  @include transition(all 0.25s ease);
+}
+.line {
+  width: 20px;
+  height: 2px;
+  background-color: rgb(255,255,255);
+  @include transition(all 0.25s ease);
+  &:nth-child(2) {
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+}
+.nav-submenu-toggle:hover {
+  .line {
+    background-color: $color-accent;
+  }
+}
+.nav-submenu-toggle.is-active {
+  .line-wrapper {
+    @include transform(rotate(45deg));
+  }
+  .line:first-child {
+    @include transform(translateY(8px));
+  }
+  .line:nth-child(3) {
+    @include transform(translateY(-8px) rotate(90deg));
+  }
+}
+
+// Nav Submenu
+.nav-sub-menu {
+  background-color: $color-primary;
+  display: block;
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  @include transition(height 0.25s ease)
+}
+.nav-sub-menu.is-open {
+  height: 50px;
+}
+
+// Nav Icon Active State
+.nav-sub-menu.is-open {
+  @media screen and (max-width: $screen-sm-max) {
+    height: 100vh;
+    overflow: scroll;
+  }
+}
+
 // Navigation //-----
 .nav-primary {
   @include horizontal-list(false);
-  float: right;
 }
 .nav-primary li {
   position: relative;
-  padding: 42px 20px;
+  padding: 17px 15px;
   &:last-child {
-    padding: 42px 0 42px 20px;
+    padding: 17px 0 17px 15px;
   }
 }
 .nav-primary li > a {
   @include transition(color .3s ease-in-out);
+  @include verlag-n7;
   color: rgb(255,255,255);
   display: block;
   position: relative;
-  font-family: $fontFamily--verlag;
-  font-size: 16px;
+  font-size: 1em;
   padding: 0;
   text-decoration: none;
   text-transform: uppercase;
   &:after {
-    background: none repeat scroll 0 0 rgb(255,255,255);
+    background: none repeat scroll 0 0 $color-accent;
     content: " ";
     height: 1px;
-    border-bottom: 1px solid $color-accent;
+    border-bottom: 1px solid rgb(255,255,255);
     left: 0;
     opacity: 0;
     position: absolute;
@@ -110,7 +205,7 @@ body.is-scrolling {
     transform: translateY(0px);
   }
   &:hover {
-    color: $color-accent;
+    color: rgb(255,255,255);
     &:after {
       height: 1px;
       opacity: 1;

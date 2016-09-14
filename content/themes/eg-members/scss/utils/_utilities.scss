@@ -158,6 +158,28 @@
   padding-top: 100px;
   padding-bottom: 100px;
 }
+// Padding Bottom // ---
+.u-paddingBot--1y {
+  padding-bottom: 5px;
+}
+.u-paddingBot--2y {
+  padding-bottom: 10px;
+}
+.u-paddingBot--3y {
+  padding-bottom: 15px;
+}
+.u-paddingBot--4y {
+  padding-bottom: 30px;
+}
+.u-paddingBot--5y {
+  padding-bottom: 50px;
+}
+.u-paddingBot--6y {
+  padding-bottom: 70px;
+}
+.u-paddingBot--7y {
+  padding-bottom: 100px;
+}
 
 // Additional Utilities //----
 .u-gpuAccelerate {
@@ -220,25 +242,40 @@ li.break:last-child {
     left: 0;
     width: 100%;
     height: 100%;
+    background-color: rgba(255,255,255,0.2);
+  }
+}
+.u-bgFilterGradient {
+  @extend .u-bgFilter;
+  &:before {
     background-image: linear-gradient(-180deg, rgba(253,247,235,0.20) 0%, rgba(241,103,35,0.50) 100%);
   }
 }
-.u-bgFilterMid {
+.u-bgFilterGradientDark {
   @extend .u-bgFilter;
   &:before {
-    background-color: rgba(20,35,40,0.50);
+    background-image: linear-gradient(-180deg, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.25) 100%);
   }
 }
-.u-bgFilterMidDark {
-  @extend .u-bgFilter;
+.u-bgFilterHover {
   &:before {
-    background-color: rgba(0,40,70,0.70);
+    position: absolute;
+    content:" ";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.35);
+    // background-image: linear-gradient(-180deg, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.25) 100%);
+    transition: all .25s ease;
+    -webkit-transition: all .25s ease;
   }
 }
-.u-bgFilterDark {
-  @extend .u-bgFilter;
+.u-bgFilterHover:hover, .u-bgFilterHover:focus {
   &:before {
-    background-color: rgba(0,40,70,0.9);
+    background-color: rgba(255,255,255,0.1);
   }
 }
 

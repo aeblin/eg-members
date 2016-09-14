@@ -15,23 +15,35 @@ jQuery(document).ready(function($) {
     $.scrollupbar.destroy();
   }
 
-  // AE: rewrite the timeout to be chained mutationobservers in near future
-  // select the target node
-  // setTimeout(function(){
-  //   // var target = document.querySelector('.body');
-  //   // var config = { attributes: true, childList: true, characterData: true };
-  //   // console.log(target);
-  //   // observer.observe(target, config);
-  //   var iframe = document.querySelector('.memberful-overlay>iframe');
-  //   var style = document.createElement('style');
-  //   style.textContent =
-  //     'body {' +
-  //     '  font-family: "Verlag A", "Verlag B";' +
-  //     '}'
-  //   ;
-  //   iframe.contentDocument.head.appendChild(style);
-  // }, 500);
+  var currentTime = new Date().getHours();
+  console.log(currentTime);
+  if (currentTime >= 5 && currentTime <= 11) {
+    $('.js-current-time').innerHTML = 'Morning';
+    console.log('Time is Morning');
+  } else if (currentTime >= 12 && currentTime <= 16) {
+    $('.js-current-time').innerHTML = 'Afternoon';
+    console.log('Time is Afternoon');
+  } else {
+    $('.js-current-time').innerHTML = 'Evening';
+    console.log('Time is Evening');
+  }
 });
+
+$('.js-current-time').text(function(){
+  var currentTime = new Date().getHours();
+  if (currentTime >= 5 && currentTime <= 11) {
+    return "morning";
+  } else if (currentTime >= 12 && currentTime <= 16.5) {
+    return "afternoon";
+  } else {
+    return "evening";
+  }
+})
+// Open Sub-nav
+$(".js-nav-submenu-toggle").click(function(){
+  $(".js-nav-submenu").toggleClass("is-open");
+  $(".js-nav-submenu-toggle").toggleClass("is-active");
+})
 
 // var observer = new MutationObserver(function(mutations, observer) {
 //   mutations.forEach(function(mutation) {

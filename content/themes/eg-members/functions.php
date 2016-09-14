@@ -31,15 +31,9 @@ class StarterSite extends TimberSite {
 	}
 
 	function add_to_context( $context ) {
-		$context['menu'] = new TimberMenu();
+		$context['menu'] = new TimberMenu('primary');
+    $context['footermenu'] = new TimberMenu('footer');
 		$context['site'] = $this;
-		//Making Memberpress play nice with Timber is pretty difficult.
-		// if (MeprUtils::is_user_logged_in()) {
-		// 	$context['mpLoggedIn'] = true;
-		// 	$context['mpCurrentUser'] = MeprUtils::get_currentuserinfo();
-		// }
-		// //Does this work?
-		// $context['mpUtils'] = new MeprUtils();
 		if(is_user_logged_in()) {
 			$context['userLoggedIn'] = true;
 			$context['currentUser'] = wp_get_current_user();

@@ -10,11 +10,11 @@ use Timber\URLHelper;
 use Timber\Image;
 
 /**
- * This is used in Timber to represent users retrived from WordPress. You can call `$my_user = new TimberUser(123);` directly, or access it through the `{{ post.author }}` method.
+ * This is used in Timber to represent users retrived from WordPress. You can call `$my_user = new Timber\User(123);` directly, or access it through the `{{ post.author }}` method.
  * @example
  * ```php
- * $context['current_user'] = new TimberUser();
- * $context['post'] = new TimberPost();
+ * $context['current_user'] = new Timber\User();
+ * $context['post'] = new Timber\Post();
  * Timber::render('single.twig', $context);
  * ```
  * ```twig
@@ -203,7 +203,7 @@ class User extends Core implements CoreInterface {
 	 * @return string the human-friendly name of the user (ex: "Buster Bluth")
 	 */
 	public function name() {
-		return $this->display_name;
+		return apply_filters('timber/user/name', $this->display_name, $this);
 	}
 
 	/**
