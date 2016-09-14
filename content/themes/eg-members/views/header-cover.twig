@@ -1,0 +1,23 @@
+<header class="headerCover u-aligner u-bgFilterMid" {% if post.header_image %}style="background-image: url('{{ TimberImage(post.header_image) }}');{% endif %}">
+
+  <div class="u-alignerItem">
+    <div class="headerContent">
+
+      <h1 class="headerContent-title{% if post.post_type == 'services' or post.post_type == 'products' or post.post_type == 'coach-offerings' %} serviceTitle{% endif %}">{{post.title}}</h1>
+
+      {% if post.header_subtitle %}
+        <h4 class="headerContent-subtitle">{{post.header_subtitle}}</h4>
+      {% endif %}
+
+    </div>
+
+    {% if post.video %}
+      <div class="headerVideo">
+        <a href="{{ post.video }}" class="play-button lightbox fancybox.iframe">
+          <div class="play-button-caret"></div>
+        </a>
+      </div>
+    {% endif %}
+  </div>
+
+</header>

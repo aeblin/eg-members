@@ -1,0 +1,112 @@
+footer {
+  background: $color-superdark;
+  margin-top: 70px;
+  padding: 30px 0 45px 0;
+}
+@media screen and (min-width: $screen-md-min){
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+  }
+}
+footer a {
+  @include transition(color .25s);
+  background: none;
+  color: rgba(255,255,255,0.85);
+  text-transform: uppercase;
+  &:hover {
+    background: none;
+    color: $color-accent;
+  }
+}
+
+footer hr {
+  border-top: 1px solid $color-accent;
+  margin: 15px 0;
+  width: 80%;
+}
+
+.footerContent--header {
+  @include surveyor-n5;
+  font-size: $fontSize--medium;
+  text-transform: uppercase;
+  color: rgb(255,255,255);
+  margin-bottom: 15px;
+}
+.footerContent--header.newsletterHeader {
+  @media screen and (min-width: 1435px) {
+    margin-top: 22px;
+    margin-bottom: 0px;
+  }
+  @media screen and (max-width: $screen-sm-min) {
+    margin-top: 0px;
+    margin-bottom: 15px;
+  }
+}
+
+.newsletter-input {
+  height: 40px;
+  width: 240px;
+  margin: 0 20px 0 40px !important;
+  background: #fff;
+  border-radius: 0;
+  border-color: #dee1e2;
+  outline: none;
+  font-size: 13px;
+  text-transform: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: #2f2f33;
+}
+.newsletter-signup {
+  width: 100%;
+  text-align: center;
+  margin: 30px auto;
+  color: #1e1e1e;
+}
+.newsletter-submit {
+  margin-top: 20px;
+  @media screen and (max-width: $screen-sm-max) {
+    margin-top: 30px;
+  }
+}
+
+.footerContent--menu {
+  margin-bottom: 30px;
+}
+
+.footer--logo {
+  position: absolute;
+  top: 8px;
+  left: 0;
+}
+
+.footer-social {
+  @include clearfix;
+  font-size: $fontSize--smMedium;
+  @media screen and (max-width: $screen-sm-max){
+    font-size: $fontSize--large--mobile;
+  }
+}
+
+.footerContent--link {
+  margin: 1em 0;
+  font-weight: 400;
+}
+
+.footerContent--topLink {
+  margin: 1em 0;
+  font-weight: 700;
+}
+
+.footerContent--submenu {
+  padding-left: 15px;
+  margin-bottom: 20px;
+}
+
+.footerContent--copyright {
+  color: rgba(255,255,255,0.8);
+}
