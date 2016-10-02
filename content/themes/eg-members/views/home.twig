@@ -4,7 +4,7 @@
 
   {% if (userLoggedIn == true) %}
     {% include "userpanel.twig" %}
-    {#% include "tease-blog.twig" %#}
+    {% include "tease-blog.twig" %}
     {% include "resources.twig" %}
   {% else %}
     {% include "signin.twig" %}
