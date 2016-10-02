@@ -1,8 +1,6 @@
 *.sql
 *.sass-cache/
 
-content/plugins/*
-
 /content/uploads/
 /vendor/
 /wordpress/
