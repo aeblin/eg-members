@@ -12,10 +12,24 @@
 						<h1 class="article-h1">{{post.title}}</h1>
 					{% endif %}
 					<section class="resource-section">
-						{{post.content}}
+						<div class="row">
+							<div class="col-md-10 col-md-offset-1 u-textCenter">
+								{{post.content}}
+							</div>
+						</div>
+						<div class="row">
+							{% for resource in post.get_field('resource_item') %}
+								{% if resource.resource_type == "card" %}
+									{% include ['resource-card.twig'] %}
+								{% elseif resource.resource_type == "video" %}
+									{% include ['resource-video.twig'] %}
+								{% endif %}
+							{% endfor %}
+						</div>
 					</section>
 				</section>
 			</article>
 		</div>
-	</section><!-- /content-wrapper -->
+	</section>
+	<!-- /content-wrapper -->
 {% endblock %}

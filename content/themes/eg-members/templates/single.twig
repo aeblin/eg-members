@@ -1,17 +1,25 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<div class="content-wrapper">
-		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
-			<section class="article-content">
-				<h1 class="article-h1">{{post.title}}</h1>
-				<p class="blog-author">
-					<span>By</span><a href="{{post.author.path}}"> {{ post.author.name }} </a><span>&bull;</span> {{ post.post_date|date}}
-				</p>
-				<div class="article-body">
-					{{post.content}}
-				</div>
-			</section>
-		</article>
-	</div><!-- /content-wrapper -->
+
+  <article class="u-clearfix postContent post-type-{{post.post_type}}" id="post-{{post.ID}}">
+
+    {% if post.header_type == 'Cover' %}
+      {% include ["header-"~post.header_type|lower~".twig", "header-default.twig"] %}
+    {% endif %}
+
+    <div class="articleContent">
+
+      <div class="articleContent-text">
+        {% if (post.header_type == 'Default') or (post.header_type == null) %}
+          <h3 class="headerContent-titleDefault">{{post.title}}</h3>
+        {% endif %}
+        <date class="articleContent-date">Posted {{ post.date }}</date>
+        {{post.content}}
+      </div>
+
+    </div>
+
+  </article>
+
 {% endblock %}

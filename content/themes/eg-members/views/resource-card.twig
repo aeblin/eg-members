@@ -1,0 +1,13 @@
+<div class="col-md-6">
+	<a {% if resource.resource_url %}href="{{resource.resource_url}}"{% endif %}>
+		<div class="card resource-card orange-border u-textCenter"
+			{% if resource.resource_splash_image %}
+				style="background-image: url('{{ TimberImage(resource.resource_splash_image) }}');"
+			{% endif %}>
+			<div class="resource-card--content">
+				<h2 class="resource-card--title">{{resource.resource_title}}</h2>
+				<span class="resource-card--description">{{resource.resource_description}}</span>
+			</div>
+		</div>
+	</a>
+</div>

@@ -1,0 +1,226 @@
+// Post Archive/Previews
+.postArchive {
+  margin-top: 100px;
+}
+.postPreview {
+  padding: 30px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+}
+.previewContent .tease--title {
+  font-size: 3.5em;
+  margin: 15px 0;
+  &:hover {
+    color: $color-primary;
+  }
+}
+.previewContent h3 {
+  font-size: 2em;
+  &:hover{
+    color: currentColor;
+  }
+}
+.previewContent p {
+  font-size: 1.15em;
+  line-height: $fontLineHeight--medium;
+}
+.previewFooter {
+  font-size: 1.15em;
+  margin-top: 20px;
+}
+.previewFooter a {
+  color: $color-input-blueFocus;
+}
+
+// Default Header Styles
+.articleContent-headerDefault {
+  text-align: center;
+  margin-top: 6.5%;
+}
+.articleContent-headerDefault > .headerContent {
+  color: rgba(0,0,0, 0.8);
+}
+
+// Cover Header Styles
+.articleContent-headerCover {
+  text-align: center;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 600px; //Fallback in case of iOS 7 or insufficent vh support.
+  height: 75vh;
+  min-height: 500px;
+}
+@media screen and (max-width: $screen-sm-max) {
+  .articleContent-headerCover {
+    height: auto;
+    max-height: none;
+    min-height: 500px;
+  }
+  .headerContent-title {
+    font-size: 4em;
+    font-weight: 300;
+  }
+}
+.articleContent-headerCover .headerContent {
+  position: relative;
+  color: rgb(255,255,255);
+}
+
+// Article Date
+.articleContent-date {
+  @include verlag-n3;
+  display: block;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+.articleContent-date:before, .articleContent-date:after {
+  background-color: $color-primary;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 50%;
+}
+.articleContent-date:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+.articleContent-date:after{
+  left: 0.5em;
+  margin-right: -50%;
+}
+// Article Content
+.articleContent {
+  @include surveyor-n3;
+  font-size: 1.35em;
+  color: rgba(0,0,0,0.85);
+  max-width: 750px;
+  margin: 3.5% auto;
+}
+// Article Text Styling
+.articleContent-text {
+  padding: 20px 25px;
+}
+@media screen and (max-width: $screen-sm-max) {
+  .articleContent {
+    font-size: 1.25em;
+    margin-top: 10%;
+  }
+  .articleContent-text {
+    padding: 20px 15px;
+  }
+  .articleContent-text p {
+    line-height: $fontLineHeight--medium;
+  }
+}
+// Div is in here because old posts are inconsistent about how paragraphs are broken up.
+.articleContent-text p, .articleContent-text div {
+  line-height: $fontLineHeight--spacious;
+  margin-bottom: 30px;
+}
+// Article Quote Styling
+.articleContent-text > blockquote {
+  font-style: italic;
+  letter-spacing: .01rem;
+  border-left: 3px solid $color-primary;
+  padding-left: 30px;
+  margin-left: -33px;
+}
+
+// Article Image Styling
+.articleContent-text img.alignleft {
+  float: left;
+  margin-right: 30px;
+}
+
+.articleContent-text img.alignright {
+  float: right;
+  margin-left: 30px;
+}
+
+
+// Article List Styling
+.articleContent-text {
+  ol, ul {
+    margin-bottom: 30px;
+    list-style: none;
+    list-style-image: none;
+  }
+}
+.articleContent-text {
+  ol > li, ul > li {
+    line-height: $fontLineHeight--spacious;
+    margin-left: 30px;
+    margin-bottom: 13px;
+    padding-top: 2px;
+    &:before {
+      position: absolute;
+      display: inline-block;
+      box-sizing: border-box;
+      width: 58px;
+      margin-left: -58px;
+      text-align: right;
+    }
+  }
+}
+.articleContent-text > ol {
+  counter-reset: post;
+}
+.articleContent-text > ol > li {
+  &:before {
+    padding-right: 12px;
+    counter-increment: post;
+    content: counter(post) ".";
+  }
+}
+.articleContent-text > ul > li {
+  &:before{
+    margin-top: -3px;
+    padding-top: 0px;
+    padding-right: 15px;
+    font-size: 25px;
+    content: "•";
+  }
+}
+
+// Article Link Styling (Medium Magic Underlines)
+.articleContent-text a {
+  text-decoration: none;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.6) 50%);
+  background-repeat: repeat-x;
+  background-size: 2px 2px;
+  background-position: 0 20px;
+}
+.articleContent-text a:hover {
+  text-decoration: none;
+  color: $color-primary;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(241,103,36,0.6) 50%);
+  background-repeat: repeat-x;
+  background-size: 2px 2px;
+  background-position: 0 20px;
+}
+@media not all, only screen and (min-resolution: 2dppx), only screen and (-webkit-min-device-pixel-ratio: 2) {
+  // Make sure this looks right on retina
+  .articleContent-text a {
+    text-decoration: none;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 75%, rgba(0,0,0,0.8) 75%);
+    background-repeat: repeat-x;
+    background-size: 2px 2px;
+    background-position: 0 20px;
+  }
+  .articleContent-text a:hover {
+    text-decoration: none;
+    color: $color-primary;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 75%, rgba(241,103,36,0.8) 75%);
+    background-repeat: repeat-x;
+    background-size: 2px 2px;
+    background-position: 0 20px;
+  }
+}

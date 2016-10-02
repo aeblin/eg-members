@@ -161,10 +161,16 @@ body.is-scrolling {
 // Nav Icon Active State
 .nav-sub-menu.is-open {
   @media screen and (max-width: $screen-sm-max) {
-    height: 100vh;
+    height: 200px;
     overflow: scroll;
   }
 }
+.nav-sub-menu.is-open .nav-primary {
+  @media screen and (max-width: $screen-sm-max) {
+    flex-direction: column !important; // Gross, don't do this.
+  }
+}
+
 
 // Navigation //-----
 .nav-primary {
@@ -174,7 +180,9 @@ body.is-scrolling {
   position: relative;
   padding: 17px 15px;
   &:last-child {
-    padding: 17px 0 17px 15px;
+    @media screen and (min-width: $screen-md-min) {
+      padding: 17px 0 17px 15px;
+    }
   }
 }
 .nav-primary li > a {
