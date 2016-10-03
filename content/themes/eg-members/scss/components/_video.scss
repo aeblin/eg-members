@@ -17,6 +17,9 @@ video.fullscreen {
   margin: 3em 0;
   overflow: hidden;
 }
+.video--container:first-child {
+  margin-top: 100px;
+}
 
 .video--description {
   @include verlag-n3;
