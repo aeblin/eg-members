@@ -1,0 +1,14 @@
+<div class="video--container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="video--description">{{resource.resource_title}}</div>
+    </div>
+    <div class="col-md-9">
+      <div class="video--wrapper">
+        {% if resource.resource_url %}
+          <iframe src="{{resource.resource_url}}" width="640" height="400" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

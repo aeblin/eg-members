@@ -138,7 +138,6 @@ function remove_dashboard_menuitems_editor(){
     remove_menu_page('tools.php');
     remove_menu_page('customize.php');
     remove_menu_page('edit.php?post_type=acf-field-group');
-    remove_menu_page('edit.php');
   }
 }
 
@@ -229,3 +228,41 @@ function user_active_subscription_names($allMfSubs, $userIdArray) {
     return $activeSubscriptionNames;
   }
 }
+
+// Add ACF options panel to dash
+if( function_exists('acf_add_options_page') ){
+  acf_add_options_page();
+}
+
+// Shortcodes and such // ----
+
+    // Add SoundCloud oEmbed
+  function add_oembed_soundcloud(){
+    wp_oembed_add_provider( 'http://soundcloud.com/*', 'http://soundcloud.com/oembed' );
+  }
+  add_action('init','add_oembed_soundcloud');
+
+  // Video Embed Shortcode
+  // [video url="embed-url" description="Description Here"]
+  function video_embed( $atts ) {
+    $a = shortcode_atts( array(
+        'url' => '//www.youtube.com/embed/iHEMrcvWnJ4?controls=2&autohide=1',
+        'description' => 'Video description here.'
+    ), $atts );
+
+    $shortcode_content = '<div class="video--container">
+                            <div class="row">
+                              <div class="col-md-3">
+                                <div class="video--description">' . $a['description'] . '</div>
+                              </div>
+                              <div class="col-md-9">
+                                <div class="video--wrapper">
+                                  <iframe src="' . $a['url'] . '?frameborder="0" allowfullscreen></iframe>
+                                </div>
+                              </div>
+                            </div>
+                          </div>';
+    return $shortcode_content;
+  }
+
+  add_shortcode( 'video', 'video_embed' );
