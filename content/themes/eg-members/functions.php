@@ -32,7 +32,8 @@ class StarterSite extends TimberSite {
 
 	function add_to_context( $context ) {
 		$context['menu'] = new TimberMenu('primary');
-    $context['footermenu'] = new TimberMenu('footer');
+    $context['footer'] = new TimberMenu('footer');
+    $context['support'] = new TimberMenu('support');
 		$context['site'] = $this;
 		if(is_user_logged_in()) {
 			$context['userLoggedIn'] = true;
@@ -236,7 +237,7 @@ if( function_exists('acf_add_options_page') ){
 
 // Shortcodes and such // ----
 
-    // Add SoundCloud oEmbed
+  // Add SoundCloud oEmbed
   function add_oembed_soundcloud(){
     wp_oembed_add_provider( 'http://soundcloud.com/*', 'http://soundcloud.com/oembed' );
   }

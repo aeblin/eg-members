@@ -45,7 +45,7 @@
           <h3 class="footerContent--header">Resources</h3>
           <hr>
           <ul class="list-plain">
-            {% for item in footermenu.items %}
+            {% for item in footer.items %}
               <li id="menu-item-{{item.ID}}" class="footerContent--topLink menu-item-type-{{item.type}} menu-item-object-{{item.object}} menu-item-{{item.ID}}">
                 <a href="{{item.link}}">{{item.title}}</a>
 
@@ -67,9 +67,9 @@
           <h3 class="footerContent--header">Support</h3>
           <hr>
           <ul class="list-plain">
-            {% for item in footermenu.items %}
+            {% for item in support.items %}
               <li id="menu-item-{{item.ID}}" class="footerContent--topLink menu-item-type-{{item.type}} menu-item-object-{{item.object}} menu-item-{{item.ID}}">
-                <a href="{{item.link}}">{{item.title}}</a>
+                <a href="{{item.link}}" target="_blank">{{item.title}}</a>
 
                 {# Just in case you want to enable dropdown/submenus #}
                 {% if item.get_children %}
