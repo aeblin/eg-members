@@ -10680,6 +10680,11 @@ body.is-open .mobileNav--cloak {
 }
 
 /* line 7, ../scss/components/_cards.scss */
+.card.orangeBg {
+  background: #f16724;
+}
+
+/* line 10, ../scss/components/_cards.scss */
 .card.orange-border {
   border-width: 10px 0 0 0;
   border-style: solid;
@@ -10687,7 +10692,7 @@ body.is-open .mobileNav--cloak {
   border-image: linear-gradient(165deg, #f9a070 2%, #f6885a 44%, #f6885a 44%, #f68759 46%, #f1673d 100%) 1 stretch;
 }
 
-/* line 14, ../scss/components/_cards.scss */
+/* line 17, ../scss/components/_cards.scss */
 .card.news-snippet {
   font-size: 18px;
   text-align: right;
@@ -10695,7 +10700,7 @@ body.is-open .mobileNav--cloak {
   margin-bottom: 1em;
 }
 
-/* line 20, ../scss/components/_cards.scss */
+/* line 23, ../scss/components/_cards.scss */
 .card.news-snippet .date {
   display: block;
   font-family: "Verlag A", "Verlag B", sans-serif;
@@ -10706,7 +10711,7 @@ body.is-open .mobileNav--cloak {
   padding: 1em 0;
 }
 
-/* line 27, ../scss/components/_cards.scss */
+/* line 30, ../scss/components/_cards.scss */
 .card.news-snippet .excerpt {
   display: block;
   font-family: "Verlag A", "Verlag B", sans-serif;
@@ -10715,7 +10720,7 @@ body.is-open .mobileNav--cloak {
   padding: 0 0 1em 0;
 }
 
-/* line 34, ../scss/components/_cards.scss */
+/* line 37, ../scss/components/_cards.scss */
 .card.resource-square {
   position: relative;
   height: 18vw;
@@ -10724,13 +10729,13 @@ body.is-open .mobileNav--cloak {
   background-size: cover;
 }
 @media screen and (max-width: 991px) {
-  /* line 34, ../scss/components/_cards.scss */
+  /* line 37, ../scss/components/_cards.scss */
   .card.resource-square {
     margin-bottom: 13%;
   }
 }
 
-/* line 44, ../scss/components/_cards.scss */
+/* line 47, ../scss/components/_cards.scss */
 .card.resource-square .title {
   font-family: "Verlag A", "Verlag B", sans-serif;
   font-style: normal;
@@ -10745,7 +10750,7 @@ body.is-open .mobileNav--cloak {
   letter-spacing: 0.125rem;
 }
 
-/* line 56, ../scss/components/_cards.scss */
+/* line 59, ../scss/components/_cards.scss */
 .card.resource-card {
   background-size: cover;
   background-position: center;
@@ -10753,14 +10758,14 @@ body.is-open .mobileNav--cloak {
   transition: all 0.25s ease-in-out;
   margin-bottom: 30px;
 }
-/* line 62, ../scss/components/_cards.scss */
+/* line 65, ../scss/components/_cards.scss */
 .card.resource-card:hover {
   -webkit-box-shadow: 0px 1px 2px 0px black;
   box-shadow: 0px 1px 2px 0px black;
   transform: scale(0.98, 0.98);
 }
 
-/* line 67, ../scss/components/_cards.scss */
+/* line 70, ../scss/components/_cards.scss */
 .resource-card--content {
   padding: 4em;
   color: white;
@@ -10768,7 +10773,7 @@ body.is-open .mobileNav--cloak {
   text-shadow: 1px 2px rgba(20, 20, 20, 0.25);
 }
 
-/* line 73, ../scss/components/_cards.scss */
+/* line 76, ../scss/components/_cards.scss */
 .resource-card--title {
   font-family: "Verlag A", "Verlag B", sans-serif;
   font-style: normal;
@@ -10776,7 +10781,7 @@ body.is-open .mobileNav--cloak {
   letter-spacing: 0.125rem;
 }
 
-/* line 77, ../scss/components/_cards.scss */
+/* line 80, ../scss/components/_cards.scss */
 .resource-card--description {
   font-family: "Verlag A", "Verlag B", sans-serif;
   font-style: normal;

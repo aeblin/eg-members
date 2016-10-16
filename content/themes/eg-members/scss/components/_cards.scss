@@ -4,6 +4,9 @@
   @include box-shadow(0px 2px 4px 0px rgba(0,0,0,0.50));
   box-sizing: border-box;
 }
+.card.orangeBg {
+  background: $color-primary;
+}
 .card.orange-border {
   border-width: 10px 0 0 0;
   border-style: solid;
