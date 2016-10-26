@@ -23,7 +23,7 @@ $context['recent'] = Timber::get_posts( array('post_type' => 'blog', 'posts_per_
 $newsArgs = array ('post_type' => 'news',
                    'posts_per_page' => 3,
                    'orderby'   => 'date',
-                   'order'     => 'ASC'
+                   'order'     => 'DESC'
                   );
 $context['news'] = Timber::get_posts($newsArgs);
 
